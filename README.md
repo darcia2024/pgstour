@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PGS Tour & Travel
 
-## Getting Started
+Situs baru PGS Tour & Travel (Pesona Global Syiarbaitullah), travel umrah dari
+Serang, Banten. Dibangun ulang dari nol menggantikan situs WordPress lama.
 
-First, run the development server:
+## Teknologi
+
+- **Next.js 16** (App Router, TypeScript) + **Tailwind CSS v4**
+- Font: EB Garamond (judul) + Plus Jakarta Sans (teks)
+- Ikon: Phosphor Icons
+- Tanpa database. Formulir konsultasi mengarah ke WhatsApp.
+
+## Menjalankan
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build produksi
+npm start        # jalankan hasil build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Struktur
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/                    Halaman (routing berbasis folder)
+    page.tsx              Beranda
+    perjalanan/           Daftar paket + /perjalanan/[slug] detail paket
+    pengalaman/           Galeri & testimoni jamaah
+    kemitraan/            Info menjadi mitra / agen
+    tentang-kami/         Profil, prinsip, legalitas
+    konsultasi/           Formulir + kontak
+  components/             Komponen UI
+  content/                >>> SUNTING TEKS DI SINI <<<
+    packages.ts           Paket umrah: harga, itinerary, fasilitas
+    site-content.ts       Nilai, destinasi, testimoni, FAQ, profil
+  lib/site.ts             Alamat, telepon, email, media sosial, izin
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Untuk mengubah teks, harga, atau menambah paket: cukup edit file di `src/content/`
+dan `src/lib/site.ts`. Tidak perlu menyentuh komponen.
 
-## Learn More
+## Yang masih placeholder (perlu data dari klien)
 
-To learn more about Next.js, take a look at the following resources:
+- **Foto**. Semua gambar memakai placeholder bertuliskan "FOTO CONTOH".
+  Ganti komponen `<Photo label=... />` dengan `<Photo src="/img/nama.jpg" ... />`
+  setelah menaruh file di `public/img/`.
+- **Harga paket** di `src/content/packages.ts` masih estimasi.
+- **Nomor izin PPIU, NIB, akta** di `src/lib/site.ts` (`site.legal`).
+- **Link Facebook / TikTok / YouTube** di `src/lib/site.ts` (`site.social`).
+- **Jam operasional & tahun berdiri** (dipakai di Tentang Kami).
+- **Favicon & gambar Open Graph** (`src/app/favicon.ico`, tambahkan `opengraph-image`).
+- `next.config.ts`: hapus `images.unoptimized` setelah foto asli masuk dan
+  deploy di lingkungan tanpa proxy TLS, agar optimasi gambar Next aktif lagi.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Paling mudah ke Vercel: `npx vercel`. Semua halaman ter-render statis.
