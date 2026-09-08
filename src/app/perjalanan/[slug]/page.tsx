@@ -46,9 +46,9 @@ export default async function PackageDetailPage({
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-brand-deep text-paper-2">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(120%_140%_at_85%_0%,#2f6b57_0%,#163a2f_55%,#122f27_100%)]" />
-        <Container className="pb-14 pt-12 sm:pb-16 sm:pt-16">
+      <section className="relative m-1.5 overflow-hidden rounded-[16px] bg-ink-2 text-paper-2 sm:m-2.5 sm:rounded-[24px] lg:m-3">
+        <div className="absolute inset-0 bg-[radial-gradient(130%_130%_at_85%_0%,#2b6250_0%,#173a2f_48%,#0d1a15_100%)]" />
+        <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-32 sm:px-8 sm:pb-16 sm:pt-36">
           <Link
             href="/perjalanan"
             className="inline-flex items-center gap-1.5 text-sm text-paper-2/70 transition-colors hover:text-paper-2"
@@ -66,14 +66,14 @@ export default async function PackageDetailPage({
               </span>
             ))}
           </div>
-          <h1 className="mt-4 max-w-2xl font-display text-4xl leading-[1.1] sm:text-5xl">
+          <h1 className="headline mt-5 max-w-2xl text-[2.2rem] text-paper-2 sm:text-5xl lg:text-[3.4rem]">
             {pkg.name}
           </h1>
-          <p className="mt-2 text-lg text-accent-soft">{pkg.subtitle}</p>
+          <p className="mt-3 text-lg text-accent-soft">{pkg.subtitle}</p>
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-paper-2/80">
             {pkg.summary}
           </p>
-        </Container>
+        </div>
       </section>
 
       <section className="py-14 sm:py-20">

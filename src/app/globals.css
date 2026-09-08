@@ -1,37 +1,40 @@
 @import "tailwindcss";
 
 /*
-  PGS Tour & Travel - design system
-  Committed light theme. Warm bone paper, deep pine brand, restrained amber accent.
-  Backgrounds and colours are painted explicitly; the site does not invert per section.
+  PGS Tour & Travel - design system (v2, editorial / framed layout)
+  Bold grotesk headlines, pine-green frame around the whole page, warm cream
+  ground, dark sections interleaved. Committed light theme.
 */
 
 @theme {
-  --color-paper: #f6f3ec;
-  --color-paper-2: #fffdf8;
-  --color-sand: #ece4d4;
-  --color-line: #e2dac9;
-  --color-line-strong: #cdc2a9;
+  --color-paper: #f5f2ea;
+  --color-paper-2: #ffffff;
+  --color-sand: #ece5d6;
+  --color-line: #e2dccc;
+  --color-line-strong: #cdc4ac;
 
-  --color-ink: #1b2a25;
-  --color-ink-soft: #505d57;
-  --color-ink-faint: #6a736d;
+  --color-ink: #17231e;
+  --color-ink-2: #0f1a16;
+  --color-ink-soft: #515c56;
+  --color-ink-faint: #6b746d;
+  --color-muted: #9aa09a;
 
   --color-brand: #1f4a3d;
   --color-brand-deep: #143a2f;
   --color-brand-bright: #2f6b57;
 
-  /* amber, darkened for AA contrast on the cream ground when used on text */
-  --color-accent: #8a5a18;
-  --color-accent-soft: #dcae6b;
+  --color-frame: #1f4a3d;
 
-  --font-display: var(--font-eb-garamond), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  /* small decorative square before eyebrow labels; not used for text */
+  --color-marker: #c46a38;
+  --color-accent: #9a5a26;
+  --color-accent-soft: #e2b477;
 
-  --shadow-soft: 0 1px 2px rgba(27, 42, 37, 0.04), 0 12px 32px -12px rgba(27, 42, 37, 0.16);
-  --shadow-lift: 0 2px 4px rgba(27, 42, 37, 0.05), 0 24px 60px -20px rgba(27, 42, 37, 0.22);
+  --font-display: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 
-  --radius-card: 14px;
+  --shadow-soft: 0 1px 2px rgba(15, 26, 22, 0.04), 0 14px 34px -14px rgba(15, 26, 22, 0.14);
+  --shadow-lift: 0 2px 4px rgba(15, 26, 22, 0.05), 0 26px 60px -22px rgba(15, 26, 22, 0.2);
 }
 
 :root {
@@ -42,13 +45,13 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  background: var(--color-frame);
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-frame);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv01";
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -58,55 +61,58 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--color-accent) 30%, white);
-  color: var(--color-brand-deep);
+  background: color-mix(in oklab, var(--color-marker) 34%, white);
+  color: var(--color-ink);
 }
 
-/* Utilities */
+/* Headline helper: tight, heavy grotesk */
 .font-display {
   font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
 }
 
 .text-balance {
   text-wrap: balance;
 }
-
 .text-pretty {
   text-wrap: pretty;
 }
 
-.hairline {
-  border-color: var(--color-line);
-}
-
-/* Thin decorative rule used under some section labels */
-.rule-accent::after {
+/* eyebrow square marker */
+.mkr::before {
   content: "";
-  display: block;
-  width: 2.5rem;
-  height: 2px;
-  margin-top: 0.85rem;
-  background: var(--color-accent);
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.6rem;
+  vertical-align: 0.06em;
+  background: var(--color-marker);
 }
 
-/* Photographic images get a warm, quiet treatment while real assets are pending */
+/* quiet photo treatment while real assets are pending */
 .photo-warm {
-  filter: saturate(0.82) contrast(1.02) brightness(0.99) sepia(0.06);
+  filter: saturate(0.82) contrast(1.03) brightness(0.99) sepia(0.05);
 }
 
 /*
   Scroll-in animation. Progressive enhancement only: content is fully visible
-  by default, and animates in where the browser supports scroll-driven
-  animations and the user has not asked to reduce motion.
+  by default, animates in where scroll-driven animations are supported and the
+  user has not asked to reduce motion.
 */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .reveal {
       animation: reveal-in linear both;
       animation-timeline: view();
-      animation-range: entry 0% cover 20%;
+      animation-range: entry 0% cover 18%;
     }
   }
 }
@@ -114,7 +120,7 @@ body {
 @keyframes reveal-in {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;

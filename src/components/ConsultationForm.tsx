@@ -15,7 +15,7 @@ import { packages } from "@/content/packages";
 type Status = "idle" | "sending" | "sent" | "error";
 
 const fieldBase =
-  "w-full rounded-xl border border-line-strong bg-paper-2 px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand-bright/40";
+  "w-full rounded-xl border border-ink/25 bg-paper-2 px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand-bright/40";
 
 export function ConsultationForm() {
   const [status, setStatus] = useState<Status>("idle");

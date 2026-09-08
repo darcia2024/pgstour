@@ -36,7 +36,7 @@ export const site = {
 
   // Legalitas / perizinan. PLACEHOLDER - isi nomor SK resmi dari Kemenag.
   legal: {
-    ppiu: "SK Izin PPIU No. — (menunggu data)",
+    ppiu: "SK Izin PPIU: menunggu data dari klien",
     iata: "", // jika ada
     kanNib: "", // NIB
   },

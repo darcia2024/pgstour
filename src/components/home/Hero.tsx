@@ -1,77 +1,82 @@
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
-import { site } from "@/lib/site";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 /*
-  Hero background is a layered green field with a faint arch motif. No photo
-  dependency, so it renders instantly and offline.
+  Dark hero block, inset inside the framed card, rounded to match.
 
-  TODO(pgs): to use a real photograph of the Masjidil Haram instead, drop the
-  file in /public/img/hero.jpg and uncomment the <img> below. Keep the dark
-  gradient overlay so the text stays readable. Recommended: 2400x1600, subject
-  slightly right of centre.
+  TODO(pgs): swap the background for a real photo of the Masjidil Haram or a
+  PGS group. Drop it in /public/img/hero.jpg and uncomment the <img>. Keep the
+  dark overlay so the headline stays legible. Recommended 2400x1600, subject
+  toward the right.
 */
+
+const process = ["Bimbingan", "Keberangkatan", "Kepulangan"];
+
 export function Hero() {
   return (
-    <section className="relative isolate flex h-[86vh] max-h-[860px] min-h-[560px] items-center overflow-hidden bg-brand-deep">
-      {/* <img src="/img/hero.jpg" alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" /> */}
-
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(125%_120%_at_12%_8%,#357a63_0%,#1b4135_46%,#122f27_100%)]" />
+    <section className="relative m-1.5 overflow-hidden rounded-[16px] bg-ink-2 text-paper-2 sm:m-2.5 sm:rounded-[24px] lg:m-3">
+      {/* <img src="/img/hero.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" /> */}
+      <div className="absolute inset-0 bg-[radial-gradient(130%_120%_at_18%_0%,#2c6552_0%,#173a2f_45%,#0d1a15_100%)]" />
       <svg
         aria-hidden
-        className="absolute bottom-0 right-0 -z-10 h-[78%] w-auto text-accent-soft/[0.09]"
+        className="absolute bottom-0 right-0 h-[72%] w-auto text-accent-soft/[0.08]"
         viewBox="0 0 460 520"
         fill="none"
         preserveAspectRatio="xMaxYMax slice"
       >
-        <path
-          d="M230 20C124 20 40 104 40 210v320h380V210C420 104 336 20 230 20Z"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <path
-          d="M230 150c-62 0-112 50-112 112v268h224V262c0-62-50-112-112-112Z"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <path
-          d="M230 250c-40 0-72 32-72 72v206h144V322c0-40-32-72-72-72Z"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
+        <path d="M230 20C124 20 40 104 40 210v320h380V210C420 104 336 20 230 20Z" stroke="currentColor" strokeWidth="2" />
+        <path d="M230 150c-62 0-112 50-112 112v268h224V262c0-62-50-112-112-112Z" stroke="currentColor" strokeWidth="2" />
+        <path d="M230 250c-40 0-72 32-72 72v206h144V322c0-40-32-72-72-72Z" stroke="currentColor" strokeWidth="2" />
       </svg>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-2/70 via-transparent to-ink-2/50" />
 
-      <Container className="py-20">
-        <div className="max-w-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-soft">
-            {site.meaning}
-          </p>
-          <h1 className="mt-5 font-display text-[2.6rem] leading-[1.1] text-paper-2 sm:text-5xl md:text-[3.4rem]">
-            Mengantar langkah,
+      <div className="relative mx-auto flex min-h-[clamp(500px,74vh,860px)] w-full max-w-7xl flex-col px-5 pb-9 pt-28 sm:px-8 sm:pt-32">
+        <div>
+          <Eyebrow tone="light">Travel Umrah Berizin Resmi</Eyebrow>
+          <h1 className="headline mt-6 text-[2.3rem] text-paper-2 sm:text-[3.4rem] lg:text-6xl xl:text-[4.6rem]">
+            Mengantar
             <br />
-            <span className="italic text-accent-soft">memaknai ibadah.</span>
+            Langkah, Memaknai
+            <br />
+            Ibadah.
           </h1>
-          <p className="mt-6 max-w-md text-[15px] leading-relaxed text-paper-2/85 sm:text-base">
-            Travel umrah dari Serang dengan kelompok kecil, pembimbing yang
-            menemani, dan biaya yang terbuka sejak awal.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center gap-3">
-            <Button href="/konsultasi" size="lg" variant="onDark">
-              Konsultasi
-            </Button>
-            <Button
-              href="/perjalanan"
-              size="lg"
-              variant="ghost"
-              className="text-paper-2 hover:bg-paper-2/10"
-            >
-              Lihat paket umrah
-              <ArrowRight size={17} />
-            </Button>
+        </div>
+
+        <div className="mt-auto grid gap-8 pt-12 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="order-2 flex flex-wrap gap-x-8 gap-y-2 text-sm text-paper-2/55 lg:order-1">
+            {process.map((p) => (
+              <span key={p}>
+                <span className="mr-1.5 text-paper-2/40">+</span>
+                {p}
+              </span>
+            ))}
+          </div>
+
+          <div className="order-1 max-w-sm lg:order-2 lg:text-right">
+            <p className="text-[15px] leading-relaxed text-paper-2/80">
+              Umrah Reguler, Umrah Plus Turki &amp; Aqsa, dan Umrah Ramadhan.
+              Untuk keluarga, perorangan, dan rombongan.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2.5 lg:justify-end">
+              <Link
+                href="/perjalanan"
+                className="inline-flex items-center gap-1.5 rounded-full bg-paper-2 px-5 py-2.5 text-sm font-medium text-ink transition-transform duration-200 hover:-translate-y-px"
+              >
+                Lihat Paket
+                <ArrowUpRight size={15} weight="bold" />
+              </Link>
+              <Link
+                href="/konsultasi"
+                className="inline-flex items-center gap-1.5 rounded-full border border-paper-2/30 px-5 py-2.5 text-sm font-medium text-paper-2 transition-colors hover:bg-paper-2/10"
+              >
+                Konsultasi
+                <ArrowUpRight size={15} weight="bold" />
+              </Link>
+            </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

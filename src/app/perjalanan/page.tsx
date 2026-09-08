@@ -17,7 +17,7 @@ export default function PerjalananPage() {
   return (
     <>
       <PageHeader
-        label="Paket Umrah"
+        eyebrow="Paket Umrah"
         title="Pilih perjalanan yang sesuai dengan niat Anda"
         intro="Setiap paket memakai pola dasar yang sama: kelompok kecil, pembimbing yang menemani, dan biaya yang terbuka. Yang membedakan adalah durasi dan kota yang ditambahkan."
       />

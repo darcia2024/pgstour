@@ -1,49 +1,63 @@
 import { clsx } from "clsx";
+import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./Reveal";
+import { Eyebrow } from "./Eyebrow";
 
 /**
- * Vertical-stack section header: optional small label, headline, optional intro.
- * No split-header (big headline left / paragraph right) anywhere on the site.
- * Use the `label` prop sparingly - at most one per three sections per page.
+ * Section header: optional eyebrow, a big bold grotesk headline (accepts a
+ * ReactNode so words can be de-emphasised with <span className="text-muted">),
+ * optional intro, optional link. Vertical stack, no split-header.
  */
 export function SectionHeading({
-  label,
+  eyebrow,
+  eyebrowTone = "dark",
   title,
   intro,
+  link,
   align = "left",
   className,
 }: {
-  label?: string;
+  eyebrow?: string;
+  eyebrowTone?: "dark" | "light";
   title: React.ReactNode;
   intro?: React.ReactNode;
+  link?: { href: string; label: string };
   align?: "left" | "center";
   className?: string;
 }) {
   return (
     <Reveal
       className={clsx(
-        "max-w-2xl",
+        "max-w-3xl",
         align === "center" && "mx-auto text-center",
         className,
       )}
     >
-      {label ? (
-        <p
-          className={clsx(
-            "mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent",
-            align === "center" && "flex justify-center",
-          )}
+      {eyebrow ? (
+        <Eyebrow
+          tone={eyebrowTone}
+          className={clsx("mb-5", align === "center" && "justify-center")}
         >
-          {label}
-        </p>
+          {eyebrow}
+        </Eyebrow>
       ) : null}
-      <h2 className="font-display text-3xl leading-[1.15] text-ink sm:text-4xl md:text-[2.75rem]">
+      <h2 className="headline text-[2rem] leading-[1.02] sm:text-[2.6rem] md:text-5xl">
         {title}
       </h2>
       {intro ? (
-        <p className="mt-5 text-pretty text-[15px] leading-relaxed text-ink-soft sm:text-base">
+        <p className="mt-5 max-w-2xl text-pretty text-[15px] leading-relaxed text-ink-soft sm:text-base">
           {intro}
         </p>
+      ) : null}
+      {link ? (
+        <Link
+          href={link.href}
+          className="group mt-6 inline-flex items-center gap-2 border-b border-line-strong pb-1 text-xs font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:border-ink"
+        >
+          <ArrowRight size={15} weight="bold" />
+          {link.label}
+        </Link>
       ) : null}
     </Reveal>
   );

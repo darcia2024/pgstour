@@ -21,7 +21,7 @@ export default function KonsultasiPage() {
   return (
     <>
       <PageHeader
-        label="Konsultasi"
+        eyebrow="Konsultasi"
         title="Ceritakan perjalanan yang Anda niatkan"
         intro="Isi formulir di bawah atau hubungi kami langsung. Tidak ada biaya untuk berkonsultasi, dan Anda tidak terikat apa pun sampai memutuskan mendaftar."
       />

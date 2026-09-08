@@ -20,6 +20,7 @@ export function Photo({
   src,
   alt,
   label,
+  bare = false,
   fill = false,
   className,
   imgClassName,
@@ -28,6 +29,8 @@ export function Photo({
   src?: string;
   alt: string;
   label?: string;
+  /** hide the placeholder caption text (use when the parent adds its own) */
+  bare?: boolean;
   fill?: boolean;
   className?: string;
   imgClassName?: string;
@@ -80,7 +83,7 @@ export function Photo({
           <line x1="60" y1="307" x2="340" y2="307" />
         </g>
         <circle cx="200" cy="150" r="6" fill={line} fillOpacity="0.4" />
-        {label ? (
+        {!bare && label ? (
           <text
             x="200"
             y="352"
@@ -94,18 +97,20 @@ export function Photo({
             {label}
           </text>
         ) : null}
-        <text
-          x="200"
-          y="374"
-          textAnchor="middle"
-          fontFamily="ui-sans-serif, system-ui, sans-serif"
-          fontSize="10"
-          letterSpacing="2"
-          fill={line}
-          fillOpacity="0.5"
-        >
-          FOTO CONTOH
-        </text>
+        {!bare ? (
+          <text
+            x="200"
+            y="374"
+            textAnchor="middle"
+            fontFamily="ui-sans-serif, system-ui, sans-serif"
+            fontSize="10"
+            letterSpacing="2"
+            fill={line}
+            fillOpacity="0.5"
+          >
+            FOTO CONTOH
+          </text>
+        ) : null}
       </svg>
     </div>
   );

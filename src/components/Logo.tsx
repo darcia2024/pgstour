@@ -47,13 +47,14 @@ export function Logo({
         />
       </svg>
       <span className="flex flex-col leading-none">
-        <span
-          className={clsx(
-            "font-display text-xl tracking-tight",
-            text,
+        <span className={clsx("font-display text-lg tracking-tight", text)}>
+          {compact ? (
+            <>
+              PGS Tour<sup className="ml-0.5 text-[0.5em] font-semibold opacity-60">®</sup>
+            </>
+          ) : (
+            "PGS Tour & Travel"
           )}
-        >
-          PGS Tour &amp; Travel
         </span>
         {compact ? null : (
           <span

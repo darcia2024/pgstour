@@ -20,7 +20,7 @@ export default function TentangKamiPage() {
   return (
     <>
       <PageHeader
-        label="Tentang Kami"
+        eyebrow="Tentang Kami"
         title="Menyampaikan syiar Baitullah, bukan sekadar menjual perjalanan"
         intro={`${site.legalName}, dikenal sebagai ${site.name}. Berkantor di Kota Serang, Banten.`}
       />

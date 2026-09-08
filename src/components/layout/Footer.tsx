@@ -16,8 +16,12 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 bg-brand-deep text-paper-2">
+    <footer className="bg-ink-2 text-paper-2">
       <Container className="py-16">
+        <p className="headline mb-14 max-w-2xl text-3xl leading-[1.05] text-paper-2 sm:text-4xl">
+          Mengantar langkah,{" "}
+          <span className="text-paper-2/45">memaknai ibadah.</span>
+        </p>
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr] md:gap-8">
           <div className="max-w-sm">
             <Logo tone="light" />

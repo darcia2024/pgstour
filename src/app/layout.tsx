@@ -1,21 +1,13 @@
 import type { Metadata } from "next";
-import { EB_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { site } from "@/lib/site";
 
-const display = EB_Garamond({
-  variable: "--font-eb-garamond",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const sans = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
   display: "swap",
 });
@@ -53,14 +45,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="id"
-      className={`${display.variable} ${sans.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col bg-paper text-ink">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="id" className={`${hanken.variable} h-full antialiased`}>
+      <body className="bg-frame">
+        {/* Pine-green frame around the whole page */}
+        <div className="min-h-screen bg-frame p-1.5 sm:p-2.5 lg:p-3">
+          <div className="relative overflow-hidden rounded-[20px] bg-paper sm:rounded-[30px] lg:rounded-[38px]">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </div>
         <WhatsAppButton />
       </body>
     </html>

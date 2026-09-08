@@ -1,34 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { List, X } from "@phosphor-icons/react";
+import { List, X, ArrowUpRight } from "@phosphor-icons/react";
 import { clsx } from "clsx";
 import { Logo } from "@/components/Logo";
-import { Button } from "@/components/ui/Button";
 import { nav, primaryCta } from "@/lib/site";
 
+/*
+  Non-sticky nav that overlays the dark hero at the top of every page.
+  White on dark. Sticky was dropped so the rounded card can safely clip
+  its content; the floating WhatsApp button is the persistent CTA.
+*/
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const sentinelRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = sentinelRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => setScrolled(!entry.isIntersecting),
-      { rootMargin: "-8px 0px 0px 0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -41,29 +30,20 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <>
-    <div ref={sentinelRef} aria-hidden className="h-px w-full" />
-    <header
-      className={clsx(
-        "sticky top-0 z-50 bg-paper/95 backdrop-blur-md transition-shadow duration-300",
-        scrolled || open
-          ? "border-b border-line shadow-[0_1px_20px_-8px_rgba(27,42,37,0.25)]"
-          : "border-b border-transparent",
-      )}
-    >
-      <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between px-5 sm:px-8">
-        <Logo compact />
+    <header className="absolute inset-x-0 top-0 z-30">
+      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
+        <Logo tone="light" compact />
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={clsx(
-                "rounded-full px-3.5 py-2 text-sm transition-colors",
+                "text-sm transition-colors",
                 isActive(item.href)
-                  ? "text-brand"
-                  : "text-ink-soft hover:text-ink",
+                  ? "text-paper-2"
+                  : "text-paper-2/65 hover:text-paper-2",
               )}
             >
               {item.label}
@@ -71,47 +51,58 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href={primaryCta.href} size="md">
-            {primaryCta.label}
-          </Button>
-        </div>
+        <Link
+          href={primaryCta.href}
+          className="hidden items-center gap-1.5 rounded-full bg-paper-2 px-4 py-2 text-sm font-medium text-ink transition-transform duration-200 hover:-translate-y-px lg:inline-flex"
+        >
+          {primaryCta.label}
+          <ArrowUpRight size={15} weight="bold" />
+        </Link>
 
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
-          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-ink lg:hidden"
+          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-paper-2 lg:hidden"
         >
           {open ? <X size={22} /> : <List size={22} />}
         </button>
       </div>
 
       {open ? (
-        <div className="lg:hidden">
-          <nav className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-5 pb-6 pt-2 sm:px-8">
+        <div className="fixed inset-0 z-40 bg-ink-2 lg:hidden">
+          <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
+            <Logo tone="light" compact />
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Tutup menu"
+              className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-paper-2"
+            >
+              <X size={22} />
+            </button>
+          </div>
+          <nav className="mx-auto flex w-full max-w-7xl flex-col px-5 pt-6 sm:px-8">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={clsx(
-                  "rounded-xl px-4 py-3 text-[15px]",
-                  isActive(item.href)
-                    ? "bg-sand text-brand"
-                    : "text-ink-soft hover:bg-sand/60",
-                )}
+                className="border-b border-paper-2/10 py-4 text-2xl font-medium text-paper-2"
               >
                 {item.label}
               </Link>
             ))}
-            <Button href={primaryCta.href} size="lg" className="mt-3 w-full">
+            <Link
+              href={primaryCta.href}
+              className="mt-6 inline-flex items-center justify-center gap-1.5 rounded-full bg-paper-2 px-5 py-3.5 text-base font-medium text-ink"
+            >
               {primaryCta.label}
-            </Button>
+              <ArrowUpRight size={16} weight="bold" />
+            </Link>
           </nav>
         </div>
       ) : null}
     </header>
-    </>
   );
 }

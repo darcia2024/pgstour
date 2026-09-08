@@ -56,7 +56,7 @@ export default function KemitraanPage() {
   return (
     <>
       <PageHeader
-        label="Kemitraan"
+        eyebrow="Kemitraan"
         title="Berangkatkan lebih banyak jamaah, tanpa menanggung operasionalnya sendiri"
         intro="Kami membuka kemitraan untuk perorangan, komunitas, dan calon perwakilan daerah. Anda membangun kepercayaan di lingkungan Anda, kami yang menjalankan perjalanannya."
       />

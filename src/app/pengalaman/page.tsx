@@ -29,7 +29,7 @@ export default function PengalamanPage() {
   return (
     <>
       <PageHeader
-        label="Pengalaman Jamaah"
+        eyebrow="Pengalaman Jamaah"
         title="Bukan sekadar itinerary, tapi momen yang penuh arti"
         intro="Ada hal-hal yang tidak tertulis dalam itinerary. Perjalanan umrah adalah kesempatan untuk kembali dengan hati yang berbeda: lebih tenang, lebih dekat kepada Allah, lebih mencintai Rasulullah, dan lebih peduli kepada sesama."
       />
