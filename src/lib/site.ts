@@ -10,6 +10,7 @@ export const site = {
   shortName: "PGS Tour",
   legalName: "PT Pesona Global Syiarbaitullah",
   tagline: "Mengantar Langkah, Memaknai Ibadah",
+  motto: "Amanah & Terpercaya",
   meaning: "Pesona Global Syiarbaitullah",
   description:
     "Travel umrah dari Serang, Banten yang mendampingi setiap tamu Allah menjalani ibadah dengan tenang, nyaman, khusyuk, dan penuh makna.",

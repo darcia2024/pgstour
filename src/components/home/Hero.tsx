@@ -17,7 +17,7 @@ export function Hero() {
   return (
     <section className="relative m-1.5 overflow-hidden rounded-[16px] bg-ink-2 text-paper-2 sm:m-2.5 sm:rounded-[24px] lg:m-3">
       {/* <img src="/img/hero.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" /> */}
-      <div className="absolute inset-0 bg-[radial-gradient(130%_120%_at_18%_0%,#2c6552_0%,#173a2f_45%,#0d1a15_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(130%_120%_at_18%_0%,#2f6fb8_0%,#1c2a7e_46%,#0c1030_100%)]" />
       <svg
         aria-hidden
         className="absolute bottom-0 right-0 h-[72%] w-auto text-accent-soft/[0.08]"

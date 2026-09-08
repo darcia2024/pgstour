@@ -50,7 +50,7 @@ export function ServicesDark() {
               Layanan
               <span
                 aria-hidden
-                className="inline-block h-[0.78em] w-[1.5em] rounded-md bg-[linear-gradient(120deg,#2f6b57,#e2b477)] align-middle"
+                className="inline-block h-[0.78em] w-[1.5em] rounded-md bg-[linear-gradient(120deg,#1f7ec4,#86d0f2)] align-middle"
               />
               Kami
             </h2>

@@ -1,40 +1,40 @@
 @import "tailwindcss";
 
 /*
-  PGS Tour & Travel - design system (v2, editorial / framed layout)
-  Bold grotesk headlines, pine-green frame around the whole page, warm cream
-  ground, dark sections interleaved. Committed light theme.
+  PGS Tour & Travel - design system (v3, brand blue)
+  Palette taken from the PGS Tour logo: cyan arch, blue Kaaba, deep navy swoosh.
+  Editorial framed layout, bold grotesk headlines, committed light theme.
 */
 
 @theme {
-  --color-paper: #f5f2ea;
+  --color-paper: #f3f5fb;
   --color-paper-2: #ffffff;
-  --color-sand: #ece5d6;
-  --color-line: #e2dccc;
-  --color-line-strong: #cdc4ac;
+  --color-sand: #e5eaf6;
+  --color-line: #dce2f0;
+  --color-line-strong: #c2cbe2;
 
-  --color-ink: #17231e;
-  --color-ink-2: #0f1a16;
-  --color-ink-soft: #515c56;
-  --color-ink-faint: #6b746d;
-  --color-muted: #9aa09a;
+  --color-ink: #141838;
+  --color-ink-2: #0c1030;
+  --color-ink-soft: #4a5273;
+  --color-ink-faint: #6a7191;
+  --color-muted: #9aa1c0;
 
-  --color-brand: #1f4a3d;
-  --color-brand-deep: #143a2f;
-  --color-brand-bright: #2f6b57;
+  --color-brand: #223089;
+  --color-brand-deep: #171d5e;
+  --color-brand-bright: #1f7ec4;
 
-  --color-frame: #1f4a3d;
+  --color-frame: #223089;
 
-  /* small decorative square before eyebrow labels; not used for text */
-  --color-marker: #c46a38;
-  --color-accent: #9a5a26;
-  --color-accent-soft: #e2b477;
+  /* cyan from the logo arch; small decorative square + tinted accents */
+  --color-marker: #26a8e0;
+  --color-accent: #1173b0;
+  --color-accent-soft: #86d0f2;
 
   --font-display: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-soft: 0 1px 2px rgba(15, 26, 22, 0.04), 0 14px 34px -14px rgba(15, 26, 22, 0.14);
-  --shadow-lift: 0 2px 4px rgba(15, 26, 22, 0.05), 0 26px 60px -22px rgba(15, 26, 22, 0.2);
+  --shadow-soft: 0 1px 2px rgba(12, 16, 48, 0.05), 0 14px 34px -14px rgba(12, 16, 48, 0.16);
+  --shadow-lift: 0 2px 4px rgba(12, 16, 48, 0.06), 0 26px 60px -22px rgba(12, 16, 48, 0.22);
 }
 
 :root {
@@ -97,9 +97,9 @@ body {
   background: var(--color-marker);
 }
 
-/* quiet photo treatment while real assets are pending */
+/* quiet, slightly cool treatment while real photos are pending */
 .photo-warm {
-  filter: saturate(0.82) contrast(1.03) brightness(0.99) sepia(0.05);
+  filter: saturate(0.9) contrast(1.02) brightness(1);
 }
 
 /*

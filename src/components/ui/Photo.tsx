@@ -56,10 +56,11 @@ export function Photo({
     );
   }
 
-  const h = hue(label ?? alt);
-  const c1 = `hsl(${h} 22% 82%)`;
-  const c2 = `hsl(${(h + 40) % 360} 26% 63%)`;
-  const line = `hsl(${h} 30% 40%)`;
+  // keep placeholders within the brand blue band so they read as intentional
+  const h = 198 + (hue(label ?? alt) % 34);
+  const c1 = `hsl(${h} 40% 86%)`;
+  const c2 = `hsl(${h + 12} 44% 62%)`;
+  const line = `hsl(${h} 46% 32%)`;
 
   return (
     <div className={wrap}>

@@ -10,13 +10,19 @@ Serang, Banten. Dibangun ulang dari nol menggantikan situs WordPress lama.
 - Ikon: Phosphor Icons
 - Tanpa database. Formulir konsultasi mengarah ke WhatsApp.
 
-## Gaya visual (v2)
+## Gaya visual
 
 Layout editorial ala agensi: seluruh halaman dibingkai kartu sudut membulat
-berwarna hijau pinus, hero gelap membulat di setiap halaman, judul grotesk
-tebal, penanda kotak terakota sebelum label, strip foto full-bleed, blok angka
-besar bergaris putus-putus, dan selang-seling section terang/gelap. Nilai token
-warna & bentuk ada di `src/app/globals.css` (blok `@theme`).
+warna **navy** (dari logo PGS Tour), hero gelap membulat di setiap halaman,
+judul grotesk tebal, penanda kotak **cyan** sebelum label, strip foto
+full-bleed, blok angka besar bergaris putus-putus, selang-seling section
+terang/gelap. Palet diambil dari logo: navy `#223089`, cyan `#26a8e0`, navy
+gelap `#0c1030`. Semua token di `src/app/globals.css` (blok `@theme`).
+
+**Logo**: digambar ulang sebagai SVG di `src/components/Logo.tsx` (lengkung +
+Ka'bah + pesawat). Untuk memakai file logo asli, simpan versi PUTIH / knockout
+ke `public/img/logo-white.svg` lalu ganti `<LogoMark/>` dengan `<img>` di file
+itu (logo tampil di atas latar navy gelap).
 
 ## Menjalankan
 
