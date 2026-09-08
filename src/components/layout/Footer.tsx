@@ -24,7 +24,7 @@ export function Footer() {
         </p>
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr] md:gap-8">
           <div className="max-w-sm">
-            <Logo tone="light" />
+            <Logo size="lg" />
             <p className="mt-5 text-sm leading-relaxed text-paper-2/70">
               {site.description}
             </p>

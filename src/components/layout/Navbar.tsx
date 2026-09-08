@@ -32,7 +32,7 @@ export function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-30">
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Logo tone="light" compact />
+        <Logo />
 
         <nav className="hidden items-center gap-7 lg:flex">
           {nav.map((item) => (
@@ -73,7 +73,7 @@ export function Navbar() {
       {open ? (
         <div className="fixed inset-0 z-40 bg-ink-2 lg:hidden">
           <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
-            <Logo tone="light" compact />
+            <Logo size="sm" />
             <button
               type="button"
               onClick={() => setOpen(false)}
