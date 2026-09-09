@@ -10,22 +10,24 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Sky, matched to the photo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#a9d0ee] via-[#c7e0f2] to-paper-2" />
+    <section className="relative w-full overflow-hidden bg-[#bcd8ee]">
+      {/* Sky, matched to the photo's own sky tone */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#b3d3ec] via-[#c9def0] to-paper-2" />
 
-      {/* Photo at the bottom. Width scales per breakpoint = the "zoom" control. */}
+      {/* Photo at the bottom. Width scales per breakpoint = the "zoom" control.
+          The top of the image is feathered to transparent so it blends into the
+          sky with no visible seam. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/img/hero-kaaba.webp"
         alt="Ka'bah di Masjidil Haram, Makkah"
         width={1672}
         height={941}
-        className="pointer-events-none absolute bottom-0 left-1/2 w-[215%] max-w-none -translate-x-1/2 select-none sm:w-[135%] lg:w-full"
+        className="pointer-events-none absolute bottom-0 left-1/2 w-[215%] max-w-none -translate-x-1/2 select-none [mask-image:linear-gradient(to_bottom,transparent,#000_22%)] sm:w-[135%] lg:w-full"
       />
 
-      {/* Legibility scrim over the headline area */}
-      <div className="absolute inset-x-0 top-0 h-2/3 bg-gradient-to-b from-white/60 via-white/25 to-transparent" />
+      {/* Gentle legibility lift behind the headline */}
+      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/45 to-transparent" />
       {/* Blend the misty base into the page */}
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-paper-2 via-paper-2/70 to-transparent" />
 
