@@ -116,8 +116,8 @@ export default function VisaUmrohPage() {
       <PosterView
         src="/img/poster-visa-umroh.webp"
         alt="Poster resmi Price List Visa Umroh by PGS Travel"
-        width={1300}
-        height={1625}
+        width={1600}
+        height={2000}
         title="Poster Price List Visa Umroh"
         note="Seluruh tarif dan persyaratan di halaman ini mengikuti poster resmi PGS Travel."
       />

@@ -6,7 +6,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { PackageCard } from "@/components/PackageCard";
 import { Faq } from "@/components/Faq";
 import { CtaBand } from "@/components/CtaBand";
-import { PosterView } from "@/components/PosterView";
 import { mainPackage, formatIDR } from "@/content/packages";
 
 export const metadata: Metadata = {
@@ -63,15 +62,6 @@ export default function PerjalananPage() {
           </p>
         </Container>
       </section>
-
-      <PosterView
-        src="/img/poster-umroh-mahabbah.webp"
-        alt="Poster resmi Umroh Mahabbah PGS Tour: harga kamar, fasilitas, dan program"
-        width={1300}
-        height={1845}
-        title="Poster Umroh Mahabbah"
-        note="Rincian harga, fasilitas, dan program sesuai poster resmi PGS Tour."
-      />
 
       <div className="border-t border-line bg-paper-2">
         <Faq />

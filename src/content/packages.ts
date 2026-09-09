@@ -73,7 +73,7 @@ export const packages: UmrahPackage[] = [
     hotelMadinah: "Astoneast Taiba, dekat Masjid Nabawi",
     departure: "Keberangkatan terdekat - hubungi kami untuk tanggal pastinya",
     quota: "Kuota terbatas per keberangkatan",
-    image: "/img/makkah.jpg",
+    image: "/img/poster-umroh-mahabbah.webp",
     highlights: [
       "Umroh 2x dengan miqat di Bir Ali dan At-Tan'im",
       "Kereta cepat Haramain (HHR) Makkah - Madinah",

@@ -48,15 +48,8 @@ export default async function PackageDetailPage({
   return (
     <>
       <section className="relative w-full overflow-hidden bg-ink-2 text-paper-2">
-        {/* Real photo background with multi-stop dark overlay */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={pkg.image}
-          alt={pkg.name}
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-2/95 via-ink-2/85 to-ink-2/65" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-ink-2/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(130%_120%_at_85%_0%,#2c67b2_0%,#1b287c_48%,#0c1030_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-transparent" />
 
         <div className="relative mx-auto w-full max-w-7xl px-5 pb-8 pt-28 sm:px-8 sm:pb-10 sm:pt-32">
           <Link
@@ -214,8 +207,8 @@ export default async function PackageDetailPage({
         <PosterView
           src="/img/poster-umroh-mahabbah.webp"
           alt="Poster resmi Umroh Mahabbah PGS Tour"
-          width={1300}
-          height={1845}
+          width={1600}
+          height={2270}
           title="Poster resmi paket ini"
           note="Semua rincian di halaman ini diambil dari poster berikut."
         />

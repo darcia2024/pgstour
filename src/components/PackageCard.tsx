@@ -26,28 +26,18 @@ export function PackageCard({
     >
       <div
         className={clsx(
-          "relative shrink-0 overflow-hidden bg-sand",
-          featured ? "h-52 md:h-auto md:w-[45%]" : "h-44",
+          "relative shrink-0 overflow-hidden bg-[#dbeafe]",
+          featured ? "h-60 md:h-auto md:w-[42%]" : "h-48",
         )}
       >
         <Photo
           src={pkg.image}
           label={pkg.name}
-          alt={`Suasana ${pkg.cities.join(", ")}`}
+          alt={`Poster ${pkg.name}`}
           bare
           fill
-          imgClassName="transition-transform duration-500 group-hover:scale-[1.05]"
+          imgClassName="object-top transition-transform duration-500 group-hover:scale-[1.03]"
         />
-        <div className="absolute left-2.5 top-2.5 flex flex-wrap gap-1">
-          {pkg.badges.slice(0, featured ? 2 : 1).map((b) => (
-            <span
-              key={b}
-              className="rounded-full bg-paper-2/95 px-2 py-0.5 text-[10px] font-semibold text-ink shadow-2xs backdrop-blur-xs"
-            >
-              {b}
-            </span>
-          ))}
-        </div>
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">

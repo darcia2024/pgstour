@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { site } from "@/lib/site";
 
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="id" className={`${hanken.variable} h-full antialiased`}>
+    <html lang="id" className={`${jakarta.variable} h-full antialiased`}>
       <body className="min-h-screen bg-paper text-ink">
         <Navbar />
         <main>{children}</main>
