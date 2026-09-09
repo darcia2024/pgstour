@@ -12,7 +12,7 @@ const guarantees = [
   "Bimbingan umroh 2×",
   "Visa & Siskopatuh resmi",
   "Pembimbing ibadah menetap",
-  "Hotel dekat Masjid",
+  "Jarak Hotel dekat ke Masjid",
 ];
 
 export function TrustStrip() {

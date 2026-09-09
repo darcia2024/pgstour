@@ -46,7 +46,7 @@ const principles = [
   },
   {
     num: "04",
-    title: "Hotel Nyaman Dekat Masjid",
+    title: "Jarak Hotel Dekat ke Masjid",
     desc: "Memilih hotel berkualitas dalam jarak jalan kaki yang nyaman ke pelataran Masjid Nabawi (Madinah) dan Masjidil Haram (Makkah) agar jamaah dapat memaksimalkan sholat fardhu 5 waktu di masjid.",
   },
 ];

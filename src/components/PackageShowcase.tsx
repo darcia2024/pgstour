@@ -352,7 +352,7 @@ export function PackageShowcase({ pkg }: { pkg: UmrahPackage }) {
                 <div className="flex gap-3">
                   <Buildings size={22} weight="duotone" className="shrink-0 text-brand-bright mt-0.5" />
                   <div>
-                    <h3 className="text-sm font-bold text-ink">Hotel Dekat Masjid</h3>
+                    <h3 className="text-sm font-bold text-ink">Jarak Hotel Dekat ke Masjid</h3>
                     <p className="mt-1 text-xs text-ink-soft leading-relaxed">
                       Makkah: Maysan Al Mashaer &amp; Madinah: Astoneast Taiba.
                     </p>
