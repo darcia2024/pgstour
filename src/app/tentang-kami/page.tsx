@@ -37,7 +37,7 @@ const principles = [
   {
     num: "02",
     title: "Biaya Jujur & Transparan",
-    desc: "Seluruh rincian biaya penerbangan langsung, hotel bintang 4, visa resmi, kereta cepat Haramain, dan perlengkapan dibuka sejak awal. Tidak ada biaya siluman atau pungutan mendadak di kemudian hari.",
+    desc: "Seluruh rincian biaya penerbangan langsung, hotel dekat masjid, visa resmi, kereta cepat Haramain, dan perlengkapan dibuka sejak awal. Tidak ada biaya siluman atau pungutan mendadak di kemudian hari.",
   },
   {
     num: "03",

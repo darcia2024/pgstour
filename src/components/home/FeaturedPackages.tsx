@@ -34,7 +34,7 @@ export function FeaturedPackages() {
                 <span className="text-brand-bright">Pilihan Jamaah</span>
               </>
             }
-            intro="Umroh Mahabbah 9 Hari di Madinah dan Makkah. Penerbangan langsung Garuda Indonesia / Saudia, hotel bintang 5 dekat pelataran, dan bimbingan umroh 2 kali."
+            intro="Umroh Mahabbah 9 Hari di Madinah dan Makkah. Penerbangan langsung Garuda Indonesia / Saudia, hotel dekat pelataran masjid, dan bimbingan umroh 2 kali."
             className="max-w-xl"
           />
           <Reveal>
@@ -168,7 +168,7 @@ export function FeaturedPackages() {
                 <div className="mt-3.5 sm:mt-4 grid grid-cols-2 gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-ink-soft">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle size={13} weight="fill" className="text-brand shrink-0" />
-                    <span className="truncate">Hotel Bintang 5 Pelataran</span>
+                    <span className="truncate">Hotel Dekat Pelataran</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle size={13} weight="fill" className="text-brand shrink-0" />

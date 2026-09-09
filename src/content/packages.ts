@@ -69,7 +69,7 @@ export const packages: UmrahPackage[] = [
     badges: ["Program 9 Hari", "Umroh 2x", "Manasik 3x"],
     cities: ["Madinah", "Makkah"],
     airline: "Garuda Indonesia / Saudia (penerbangan langsung)",
-    hotelMakkah: "Maysan Al Mashaer (bintang 4), dekat Masjidil Haram",
+    hotelMakkah: "Maysan Al Mashaer, dekat Masjidil Haram",
     hotelMadinah: "Astoneast Taiba, dekat Masjid Nabawi",
     departure: "Keberangkatan terdekat - hubungi kami untuk tanggal pastinya",
     quota: "Kuota terbatas per keberangkatan",
@@ -83,7 +83,7 @@ export const packages: UmrahPackage[] = [
       "Tour leader dan muthawif berpengalaman",
     ],
     includes: [
-      "Hotel Makkah: Maysan Al Mashaer (bintang 4)",
+      "Hotel Makkah: Maysan Al Mashaer (dekat masjid)",
       "Hotel Madinah: Astoneast Taiba",
       "Penerbangan langsung Garuda Indonesia / Saudia (PP)",
       "Visa umroh",
