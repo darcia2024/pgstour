@@ -240,10 +240,9 @@ export function JamaahGallery({
         {/* Editorial Photo Masonry — 2 columns on mobile, 3 on desktop */}
         <div className="mt-6 sm:mt-10 columns-2 lg:columns-3 gap-3 sm:gap-6">
           {filteredPhotos.map((photo, index) => (
-            <Reveal
+            <div
               key={photo.id}
-              delay={index * 0.05}
-              className="break-inside-avoid mb-4 sm:mb-7"
+              className="break-inside-avoid mb-4 sm:mb-7 opacity-100"
             >
               <div
                 onClick={() => setSelectedIndex(index)}
@@ -251,13 +250,17 @@ export function JamaahGallery({
               >
                 {/* 1. Clean Unobstructed Photo Frame */}
                 <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-sand/20 shadow-xs transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-0.5">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={photo.src}
-                    alt={photo.title}
-                    loading="lazy"
-                    className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                  />
+                  <picture>
+                    <source srcSet={photo.src} type="image/webp" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={photo.hdSrc}
+                      alt={photo.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    />
+                  </picture>
 
                   {/* Discrete City Pill in Corner */}
                   <div className="absolute top-2 sm:top-3 left-2 sm:left-3 pointer-events-none">
@@ -295,7 +298,7 @@ export function JamaahGallery({
                   </p>
                 </div>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
 
