@@ -2,8 +2,8 @@
  * Paket perjalanan umrah PGS Tour.
  *
  * Sumber data: poster resmi "UMROH MAHABBAH" dari PGS Tour.
- * PGS Tour saat ini hanya menjalankan SATU paket dengan satu jadwal
- * keberangkatan. Perbedaan harga hanya pada jenis kamar (Double / Triple / Quad).
+ * Ini adalah paket keberangkatan terdekat. Perbedaan harga hanya pada jenis
+ * kamar (Double / Triple / Quad).
  *
  * TODO(pgs):
  * - Isi tanggal keberangkatan pasti pada field `departure`.
@@ -54,7 +54,7 @@ export const packages: UmrahPackage[] = [
     name: "Umroh Mahabbah",
     subtitle: "9 Hari - Madinah & Makkah",
     summary:
-      "Satu-satunya paket PGS Tour, disiapkan sepenuh hati. Sembilan hari di Madinah dan Makkah, penerbangan langsung, hotel dekat masjid, umroh dua kali, dan pembimbing yang menemani dari manasik hingga kembali ke tanah air.",
+      "Paket keberangkatan terdekat PGS Tour. Sembilan hari di Madinah dan Makkah, penerbangan langsung, hotel dekat masjid, umroh dua kali, dan pembimbing yang menemani dari manasik hingga kembali ke tanah air.",
     durationDays: 9,
     nightsMakkah: 4,
     nightsMadinah: 3,
@@ -71,7 +71,7 @@ export const packages: UmrahPackage[] = [
     airline: "Garuda Indonesia / Saudia (penerbangan langsung)",
     hotelMakkah: "Maysan Al Mashaer (bintang 4), dekat Masjidil Haram",
     hotelMadinah: "Astoneast Taiba, dekat Masjid Nabawi",
-    departure: "Satu jadwal keberangkatan - hubungi kami untuk tanggal terdekat",
+    departure: "Keberangkatan terdekat - hubungi kami untuk tanggal pastinya",
     quota: "Kuota terbatas per keberangkatan",
     image: "/img/makkah.jpg",
     highlights: [
@@ -144,7 +144,7 @@ export function getPackage(slug: string): UmrahPackage | undefined {
   return packages.find((p) => p.slug === slug);
 }
 
-/** Paket utama (satu-satunya saat ini). */
+/** Paket keberangkatan terdekat. */
 export const mainPackage = packages[0];
 
 export function formatIDR(value: number): string {

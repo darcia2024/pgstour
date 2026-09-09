@@ -15,11 +15,11 @@ export function FeaturedPackages() {
             eyebrow="Paket Umroh"
             title={
               <>
-                Satu paket,{" "}
-                <span className="text-muted">disiapkan sepenuh hati</span>
+                Keberangkatan{" "}
+                <span className="text-muted">terdekat</span>
               </>
             }
-            intro="PGS Tour hanya menjalankan satu paket dengan satu jadwal keberangkatan. Perbedaan harga hanya pada pilihan kamar."
+            intro="Umroh Mahabbah, 9 hari Madinah dan Makkah. Perbedaan harga hanya pada pilihan kamar."
             className="max-w-xl"
           />
           <Reveal>

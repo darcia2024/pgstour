@@ -14,6 +14,7 @@ import {
 import { Container } from "@/components/ui/Container";
 import { ButtonExternal, Button } from "@/components/ui/Button";
 import { CtaBand } from "@/components/CtaBand";
+import { PosterView } from "@/components/PosterView";
 import { packages, getPackage, formatIDR } from "@/content/packages";
 import { site, waLink } from "@/lib/site";
 
@@ -187,7 +188,7 @@ export default async function PackageDetailPage({
                 <div className="mt-5 space-y-2.5 text-sm text-ink-soft">
                   <Row label="Durasi" value={`${pkg.durationDays} hari`} />
                   <Row label="Kota" value={pkg.cities.join(", ")} />
-                  <Row label="Keberangkatan" value="1 jadwal" />
+                  <Row label="Keberangkatan" value="Terdekat" />
                 </div>
 
                 <div className="mt-6 flex flex-col gap-2.5">
@@ -208,6 +209,17 @@ export default async function PackageDetailPage({
           </div>
         </Container>
       </section>
+
+      {pkg.slug === "umroh-mahabbah" ? (
+        <PosterView
+          src="/img/poster-umroh-mahabbah.webp"
+          alt="Poster resmi Umroh Mahabbah PGS Tour"
+          width={1300}
+          height={1845}
+          title="Poster resmi paket ini"
+          note="Semua rincian di halaman ini diambil dari poster berikut."
+        />
+      ) : null}
 
       <CtaBand
         title={`Amankan kursi untuk ${pkg.name}`}

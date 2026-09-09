@@ -24,7 +24,7 @@ const stats = [
   {
     value: "PPIU",
     label: "Izin resmi Kemenag",
-    note: "No. 0910230162686860001, terdaftar di SISKOPATUH.",
+    note: "No. 09102301626860001, terdaftar di SISKOPATUH.",
   },
 ];
 

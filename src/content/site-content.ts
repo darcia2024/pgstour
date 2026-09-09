@@ -148,8 +148,8 @@ export const about = {
   ],
   principles: [
     {
-      title: "Satu paket, satu fokus",
-      body: "PGS hanya menjalankan satu paket dengan satu jadwal keberangkatan, supaya seluruh perhatian tertuju pada rombongan yang sama.",
+      title: "Perhatian penuh per rombongan",
+      body: "Setiap keberangkatan didampingi pembimbing yang menetap dan kuota yang dijaga, supaya tidak ada jamaah yang terlewat.",
     },
     {
       title: "Biaya terbuka",
@@ -166,8 +166,8 @@ export const about = {
   ],
   // TODO(pgs): lengkapi dengan data resmi (tahun berdiri, jumlah jamaah).
   stats: [
-    { value: "1", label: "Paket dengan satu jadwal keberangkatan" },
     { value: "9", label: "Hari program: Madinah dan Makkah" },
+    { value: "2x", label: "Umroh tiap keberangkatan" },
     { value: "3x", label: "Pelatihan manasik sebelum berangkat" },
   ],
 };
@@ -180,7 +180,7 @@ export type Faq = {
 export const faqs: Faq[] = [
   {
     q: "Apakah PGS Tour sudah berizin resmi?",
-    a: "Ya. PGS Tour beroperasi sebagai Penyelenggara Perjalanan Ibadah Umrah (PPIU) berizin dengan Izin PPIU No. 0910230162686860001, dan terdaftar di SISKOPATUH. Nomor izin dapat diverifikasi melalui kanal Kementerian Agama.",
+    a: "Ya. PGS Tour beroperasi sebagai Penyelenggara Perjalanan Ibadah Umrah (PPIU) berizin dengan Izin PPIU No. 09102301626860001, dan terdaftar di SISKOPATUH. Nomor izin dapat diverifikasi melalui kanal Kementerian Agama.",
   },
   {
     q: "Apa saja yang membedakan harga Double, Triple, dan Quad?",
@@ -188,7 +188,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Kapan jadwal keberangkatannya?",
-    a: "PGS Tour menjalankan satu jadwal keberangkatan. Hubungi kami melalui WhatsApp untuk mengetahui tanggal keberangkatan terdekat dan sisa kuota.",
+    a: "Hubungi kami melalui WhatsApp untuk mengetahui tanggal keberangkatan terdekat dan sisa kuota yang masih tersedia.",
   },
   {
     q: "Apa saja yang belum termasuk dalam harga paket?",

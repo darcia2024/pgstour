@@ -52,8 +52,9 @@ export function Hero() {
             Memaknai Ibadah.
           </h1>
           <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-paper-2/80 sm:text-[15px]">
-            Satu paket Umroh Mahabbah 9 hari Madinah &amp; Makkah, ditambah
-            layanan pengurusan visa umroh. Pembimbing menetap, kuota terbatas.
+            Paket Umroh Mahabbah 9 hari Madinah &amp; Makkah untuk keberangkatan
+            terdekat, ditambah layanan pengurusan visa umroh. Pembimbing menetap,
+            kuota terbatas.
           </p>
         </div>
 

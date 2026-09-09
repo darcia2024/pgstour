@@ -16,7 +16,7 @@ export function TrustStrip() {
     <div className="border-b border-line bg-paper-2">
       <Container className="flex flex-col gap-3 py-3.5 sm:py-4 md:flex-row md:items-center md:justify-between md:gap-6">
         <p className="mkr max-w-xs text-xs font-semibold uppercase leading-snug tracking-[0.1em] text-ink-soft">
-          Izin PPIU 0910230162686860001
+          Izin PPIU 09102301626860001
         </p>
         <ul className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
           {guarantees.map((g) => (

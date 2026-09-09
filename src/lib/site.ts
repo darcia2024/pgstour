@@ -49,8 +49,8 @@ export const site = {
   // Legalitas / perizinan (dari poster resmi).
   legal: {
     // TODO(pgs): verifikasi digit nomor izin dengan SK asli.
-    ppiu: "Izin PPIU No. 0910230162686860001",
-    ppiuShort: "Izin Umroh PPIU: 0910230162686860001",
+    ppiu: "Izin PPIU No. 09102301626860001",
+    ppiuShort: "Izin Umroh PPIU: 09102301626860001",
     iata: "", // jika ada
     kanNib: "", // NIB
   },

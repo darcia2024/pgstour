@@ -17,8 +17,8 @@ const pillars = [
   },
   {
     icon: UsersThree,
-    title: "Satu Rombongan",
-    desc: "Satu jadwal keberangkatan dengan kuota terbatas agar setiap jamaah tetap terpantau.",
+    title: "Rombongan Terjaga",
+    desc: "Kuota tiap keberangkatan dijaga terbatas agar setiap jamaah tetap terpantau.",
   },
 ];
 

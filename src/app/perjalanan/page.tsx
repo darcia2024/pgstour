@@ -6,6 +6,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { PackageCard } from "@/components/PackageCard";
 import { Faq } from "@/components/Faq";
 import { CtaBand } from "@/components/CtaBand";
+import { PosterView } from "@/components/PosterView";
 import { mainPackage, formatIDR } from "@/content/packages";
 
 export const metadata: Metadata = {
@@ -19,8 +20,8 @@ export default function PerjalananPage() {
     <>
       <PageHeader
         eyebrow="Paket Umroh"
-        title="Umroh Mahabbah, satu-satunya paket kami"
-        intro="PGS Tour memilih fokus pada satu paket dengan satu jadwal keberangkatan, supaya seluruh perhatian tertuju pada rombongan yang sama. Yang membedakan biaya hanya pilihan kamar."
+        title="Umroh Mahabbah, keberangkatan terdekat"
+        intro="Program 9 hari Madinah dan Makkah dengan penerbangan langsung dan hotel dekat masjid. Yang membedakan biaya hanya pilihan kamar."
       />
 
       <section className="py-10 sm:py-14">
@@ -62,6 +63,15 @@ export default function PerjalananPage() {
           </p>
         </Container>
       </section>
+
+      <PosterView
+        src="/img/poster-umroh-mahabbah.webp"
+        alt="Poster resmi Umroh Mahabbah PGS Tour: harga kamar, fasilitas, dan program"
+        width={1300}
+        height={1845}
+        title="Poster Umroh Mahabbah"
+        note="Rincian harga, fasilitas, dan program sesuai poster resmi PGS Tour."
+      />
 
       <div className="border-t border-line bg-paper-2">
         <Faq />

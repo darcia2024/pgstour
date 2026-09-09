@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CtaBand } from "@/components/CtaBand";
+import { PosterView } from "@/components/PosterView";
 import { visaServices } from "@/content/visa";
 import { site } from "@/lib/site";
 
@@ -111,6 +112,15 @@ export default function VisaUmrohPage() {
           </p>
         </Container>
       </section>
+
+      <PosterView
+        src="/img/poster-visa-umroh.webp"
+        alt="Poster resmi Price List Visa Umroh by PGS Travel"
+        width={1300}
+        height={1625}
+        title="Poster Price List Visa Umroh"
+        note="Seluruh tarif dan persyaratan di halaman ini mengikuti poster resmi PGS Travel."
+      />
 
       <CtaBand
         title="Butuh pengurusan visa umroh?"
