@@ -9,13 +9,14 @@ import { Logo } from "@/components/Logo";
 import { nav, primaryCta } from "@/lib/site";
 
 /*
-  Non-sticky nav that overlays the dark hero at the top of every page.
-  White on dark. Sticky was dropped so the rounded card can safely clip
-  its content; the floating WhatsApp button is the persistent CTA.
+  Non-sticky nav overlaying the first section of every page.
+  - Home ("/") opens on a bright sky hero -> dark text, colour logo.
+  - Every other page opens on a dark hero -> white text, knockout logo.
 */
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const onLight = pathname === "/";
 
   // Tutup menu mobile setiap kali rute berubah.
   // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -34,7 +35,7 @@ export function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-30 w-full pt-4 sm:pt-6">
       <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-5 sm:h-16 sm:px-8">
-        <Logo />
+        <Logo tone={onLight ? "color" : "white"} />
 
         <nav className="hidden items-center gap-2 lg:flex">
           {nav.map((item) => (
@@ -43,9 +44,13 @@ export function Navbar() {
               href={item.href}
               className={clsx(
                 "rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-all duration-150",
-                isActive(item.href)
-                  ? "bg-paper-2/20 text-paper-2 shadow-xs"
-                  : "text-paper-2/75 hover:bg-paper-2/10 hover:text-paper-2",
+                onLight
+                  ? isActive(item.href)
+                    ? "bg-ink/10 text-ink"
+                    : "text-ink-soft hover:bg-ink/5 hover:text-ink"
+                  : isActive(item.href)
+                    ? "bg-paper-2/20 text-paper-2 shadow-xs"
+                    : "text-paper-2/75 hover:bg-paper-2/10 hover:text-paper-2",
               )}
             >
               {item.label}
@@ -55,7 +60,10 @@ export function Navbar() {
 
         <Link
           href={primaryCta.href}
-          className="hidden items-center gap-1.5 rounded-full bg-paper-2 px-4.5 py-2 text-xs font-semibold text-ink transition-transform duration-200 hover:-translate-y-px hover:shadow-sm lg:inline-flex"
+          className={clsx(
+            "hidden items-center gap-1.5 rounded-full px-4.5 py-2 text-xs font-semibold transition-transform duration-200 hover:-translate-y-px hover:shadow-sm lg:inline-flex",
+            onLight ? "bg-ink text-paper-2" : "bg-paper-2 text-ink",
+          )}
         >
           {primaryCta.label}
           <ArrowUpRight size={14} weight="bold" />
@@ -66,7 +74,10 @@ export function Navbar() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
-          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-paper-2 lg:hidden"
+          className={clsx(
+            "-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full lg:hidden",
+            onLight ? "text-ink" : "text-paper-2",
+          )}
         >
           {open ? <X size={22} /> : <List size={22} />}
         </button>

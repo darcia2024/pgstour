@@ -1,90 +1,59 @@
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 
 /*
-  Dark hero block, inset inside the framed card, rounded to match.
-
-  TODO(pgs): swap the background for a real photo of the Masjidil Haram or a
-  PGS group. Drop it in /public/img/hero.jpg and uncomment the <img>. Keep the
-  dark overlay so the headline stays legible. Recommended 2400x1600, subject
-  toward the right.
+  Bright, centered hero: soft sky gradient, pill badge, large centered headline,
+  one primary CTA, and a Kaaba cutout rising from the bottom edge.
 */
-
-const process = ["Bimbingan", "Keberangkatan", "Kepulangan"];
 
 export function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-ink-2 text-paper-2">
-      {/* Real background photography with multi-layer contrast overlay */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/img/hero.jpg"
-        alt="Masjidil Haram Makkah"
-        className="absolute inset-0 h-full w-full object-cover object-right sm:object-center"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink-2/95 via-ink-2/80 to-ink-2/55" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-ink-2/60" />
-      
-      <svg
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 right-0 h-[65%] w-auto text-accent-soft/[0.07]"
-        viewBox="0 0 460 520"
-        fill="none"
-        preserveAspectRatio="xMaxYMax slice"
-      >
-        <path d="M230 20C124 20 40 104 40 210v320h380V210C420 104 336 20 230 20Z" stroke="currentColor" strokeWidth="2" />
-        <path d="M230 150c-62 0-112 50-112 112v268h224V262c0-62-50-112-112-112Z" stroke="currentColor" strokeWidth="2" />
-      </svg>
+    <section className="relative w-full overflow-hidden">
+      {/* Sky */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#a6cfee] via-[#d6e8f7] to-[#e9f1fa]" />
+      <div className="absolute inset-x-0 top-0 h-[55%] bg-[radial-gradient(70%_60%_at_50%_-10%,rgba(255,255,255,0.75),transparent_70%)]" />
 
-      <div className="relative mx-auto flex min-h-[520px] w-full max-w-7xl flex-col px-5 pb-10 pt-28 sm:min-h-[560px] sm:px-8 sm:pb-12 sm:pt-34 lg:min-h-[580px]">
-        <div className="max-w-3xl">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <Eyebrow tone="light">Travel Umroh Berizin Resmi</Eyebrow>
-            <span className="inline-flex items-center gap-1 rounded-full bg-paper-2/15 px-2.5 py-0.5 text-[11px] font-medium text-paper-2/90 backdrop-blur-md">
-              <span className="text-accent-soft">•</span> Terdaftar SISKOPATUH Kemenag
-            </span>
-          </div>
+      <div className="relative mx-auto max-w-4xl px-5 pt-32 text-center sm:px-8 sm:pt-40">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-3.5 py-1.5 text-[12px] font-semibold text-ink shadow-[0_2px_10px_-2px_rgba(12,16,48,0.12)] backdrop-blur-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-brand-bright" />
+          Terdaftar SISKOPATUH Kementerian Agama
+        </span>
 
-          <h1 className="headline mt-4 text-[2rem] leading-[1.05] text-paper-2 sm:text-[3rem] lg:text-[3.6rem] xl:text-[4rem]">
-            Mengantar Langkah,
-            <br />
-            Memaknai Ibadah.
-          </h1>
-          <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-paper-2/80 sm:text-[15px]">
-            Paket Umroh Mahabbah 9 hari Madinah &amp; Makkah untuk keberangkatan
-            terdekat, ditambah layanan pengurusan visa umroh. Pembimbing menetap,
-            kuota terbatas.
-          </p>
+        <h1 className="headline mx-auto mt-7 max-w-3xl text-[2.5rem] leading-[1.02] text-ink sm:text-[3.6rem] lg:text-[4.25rem]">
+          Mengantar Langkah,
+          <br />
+          Memaknai Ibadah.
+        </h1>
+
+        <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-ink-soft sm:text-base">
+          Paket Umroh Mahabbah 9 hari Madinah dan Makkah untuk keberangkatan
+          terdekat, ditambah layanan pengurusan visa umroh. Pembimbing menetap,
+          kuota terbatas.
+        </p>
+
+        <div className="mt-9 flex items-center justify-center">
+          <Link
+            href="/perjalanan"
+            className="inline-flex items-center gap-2 rounded-xl bg-ink px-7 py-3.5 text-sm font-semibold text-paper-2 shadow-[0_12px_30px_-10px_rgba(12,16,48,0.5)] transition-transform duration-200 hover:-translate-y-0.5"
+          >
+            Lihat Paket Umroh
+            <ArrowRight size={16} weight="bold" />
+          </Link>
         </div>
+      </div>
 
-        <div className="mt-auto grid gap-6 pt-8 sm:pt-10 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div className="order-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-paper-2/65 sm:text-sm lg:order-1">
-            {process.map((p) => (
-              <span key={p} className="inline-flex items-center">
-                <span className="mr-1.5 font-bold text-accent-soft">+</span>
-                {p}
-              </span>
-            ))}
-          </div>
-
-          <div className="order-1 flex flex-wrap gap-2.5 lg:order-2 lg:justify-end">
-            <Link
-              href="/perjalanan"
-              className="inline-flex items-center gap-1.5 rounded-full bg-paper-2 px-4.5 py-2 text-xs font-semibold text-ink transition-transform duration-200 hover:-translate-y-px hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm"
-            >
-              Lihat Paket
-              <ArrowUpRight size={14} weight="bold" />
-            </Link>
-            <Link
-              href="/konsultasi"
-              className="inline-flex items-center gap-1.5 rounded-full border border-paper-2/30 bg-paper-2/5 px-4.5 py-2 text-xs font-semibold text-paper-2 backdrop-blur-xs transition-colors hover:bg-paper-2/15 sm:px-5 sm:py-2.5 sm:text-sm"
-            >
-              Konsultasi
-              <ArrowUpRight size={14} weight="bold" />
-            </Link>
-          </div>
-        </div>
+      {/* Ka'bah rising from the bottom */}
+      <div className="relative mt-8 flex h-[clamp(190px,42vw,340px)] w-full items-end justify-center sm:mt-12">
+        {/* soft ground shadow */}
+        <div className="absolute bottom-[8%] left-1/2 h-10 w-[min(24rem,72vw)] -translate-x-1/2 rounded-[100%] bg-[radial-gradient(closest-side,rgba(12,16,48,0.28),transparent)] blur-md" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/img/kaaba.webp"
+          alt="Ka'bah di Masjidil Haram"
+          width={900}
+          height={781}
+          className="relative w-[min(23rem,70vw)] translate-y-[12%] drop-shadow-[0_24px_36px_rgba(12,16,48,0.22)]"
+        />
       </div>
     </section>
   );

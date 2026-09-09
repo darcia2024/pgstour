@@ -3,27 +3,26 @@ import { clsx } from "clsx";
 
 /*
   Official PGS Tour lockup (mark + "PGS TOUR" + "AMANAH & TERPERCAYA").
-  The white/knockout file is used because the header and footer sit on dark navy.
-  Source files also kept at /public/img/logo-color.png for light contexts.
+  - tone "white" (default): knockout version, for dark backgrounds
+  - tone "color": full-colour version, for light backgrounds (e.g. the bright hero)
 */
 
-const SRC = "/img/logo-white.png";
 const W = 1731;
 const H = 1449;
 
 export function Logo({
   size = "md",
+  tone = "white",
   className,
 }: {
   /** md = header, lg = footer */
   size?: "sm" | "md" | "lg";
-  /** kept for call-site compatibility */
-  tone?: "dark" | "light";
-  compact?: boolean;
+  tone?: "white" | "color";
   className?: string;
 }) {
   const h =
     size === "lg" ? "h-14 sm:h-16" : size === "sm" ? "h-9" : "h-11 sm:h-12";
+  const src = tone === "color" ? "/img/logo-color.png" : "/img/logo-white.png";
 
   return (
     <Link
@@ -33,7 +32,7 @@ export function Logo({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={SRC}
+        src={src}
         alt="PGS Tour - Amanah & Terpercaya"
         width={W}
         height={H}
