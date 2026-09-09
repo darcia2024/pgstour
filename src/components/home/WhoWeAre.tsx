@@ -24,24 +24,34 @@ const pillars = [
 
 export function WhoWeAre() {
   return (
-    <section className="py-12 sm:py-16">
+    <section className="border-y border-line bg-paper-2 py-12 sm:py-16">
       <Container>
         <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <Reveal>
-            <Eyebrow className="mb-4">Siapa Kami</Eyebrow>
-            <h2 className="headline max-w-[22ch] text-[1.75rem] leading-[1.1] sm:text-3xl lg:text-[2.35rem]">
-              Kami mendampingi setiap{" "}
-              <span className="text-muted">tamu Allah agar pulang dengan</span>{" "}
-              hati yang lebih tenang{" "}
-              <span className="text-muted">dan</span> ibadah yang benar-benar
-              dipahami.
+            <Eyebrow className="mb-4">Sekilas</Eyebrow>
+            <h2 className="headline text-[1.75rem] leading-[1.15] text-ink sm:text-3xl lg:text-[2.2rem]">
+              Sekilas tentang PGS Tour
             </h2>
+            <div className="mt-5 space-y-3.5 text-[14px] leading-relaxed text-ink-soft sm:text-[15px]">
+              <p>
+                PGS Tour &amp; Travel adalah travel umroh berizin dari Kota
+                Serang, Banten, yang beroperasi di bawah PT Permana Group
+                Sejahtera. Nama Pesona Global Syiarbaitullah kami pilih sebagai
+                pengingat: tugas kami menyampaikan syiar rumah Allah, bukan
+                sekadar menjual kursi pesawat.
+              </p>
+              <p>
+                Karena itu kami menjaga rombongan tetap kecil, menempatkan
+                pembimbing yang benar-benar menemani dari manasik sampai
+                kepulangan, dan membuka rincian biaya sejak percakapan pertama.
+              </p>
+            </div>
             <Link
               href="/tentang-kami"
               className="mt-6 inline-flex items-center gap-2 border-b border-line-strong pb-1 text-xs font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:border-ink"
             >
               <ArrowRight size={14} weight="bold" />
-              Tentang PGS Tour
+              Selengkapnya tentang kami
             </Link>
           </Reveal>
 
@@ -49,9 +59,9 @@ export function WhoWeAre() {
             {pillars.map((p) => (
               <div
                 key={p.title}
-                className="flex items-start gap-3.5 rounded-xl border border-line bg-paper-2 p-4 transition-colors hover:border-line-strong"
+                className="flex items-start gap-3.5 rounded-xl border border-line bg-paper p-4 transition-colors hover:border-line-strong"
               >
-                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-paper text-brand-bright">
+                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-paper-2 text-brand-bright">
                   <p.icon size={18} weight="duotone" />
                 </div>
                 <div>
