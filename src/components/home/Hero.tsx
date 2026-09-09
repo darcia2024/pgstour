@@ -2,19 +2,35 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 /*
-  Bright, centered hero: soft sky gradient, pill badge, large centered headline,
-  one primary CTA, and a Kaaba cutout rising from the bottom edge.
+  Bright centered hero over a Masjidil Haram photo.
+  The photo sits at the bottom; its blue sky blends into the gradient above it
+  and its misty base blends into the page below. Mobile widens the photo so the
+  Ka'bah stays large and centred instead of being edge-cropped by object-cover.
 */
 
 export function Hero() {
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Sky */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#a6cfee] via-[#d6e8f7] to-[#e9f1fa]" />
-      <div className="absolute inset-x-0 top-0 h-[55%] bg-[radial-gradient(70%_60%_at_50%_-10%,rgba(255,255,255,0.75),transparent_70%)]" />
+      {/* Sky, matched to the photo */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#a9d0ee] via-[#c7e0f2] to-paper-2" />
 
-      <div className="relative mx-auto max-w-4xl px-5 pt-32 text-center sm:px-8 sm:pt-40">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-3.5 py-1.5 text-[12px] font-semibold text-ink shadow-[0_2px_10px_-2px_rgba(12,16,48,0.12)] backdrop-blur-sm">
+      {/* Photo at the bottom. Width scales per breakpoint = the "zoom" control. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/img/hero-kaaba.webp"
+        alt="Ka'bah di Masjidil Haram, Makkah"
+        width={1672}
+        height={941}
+        className="pointer-events-none absolute bottom-0 left-1/2 w-[215%] max-w-none -translate-x-1/2 select-none sm:w-[135%] lg:w-full"
+      />
+
+      {/* Legibility scrim over the headline area */}
+      <div className="absolute inset-x-0 top-0 h-2/3 bg-gradient-to-b from-white/60 via-white/25 to-transparent" />
+      {/* Blend the misty base into the page */}
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-paper-2 via-paper-2/70 to-transparent" />
+
+      <div className="relative mx-auto max-w-4xl px-5 pb-[52vw] pt-28 text-center sm:px-8 sm:pb-[32vw] sm:pt-36 lg:pb-[23rem]">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3.5 py-1.5 text-[12px] font-semibold text-ink shadow-[0_2px_10px_-2px_rgba(12,16,48,0.12)] backdrop-blur-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-brand-bright" />
           Terdaftar SISKOPATUH Kementerian Agama
         </span>
@@ -40,20 +56,6 @@ export function Hero() {
             <ArrowRight size={16} weight="bold" />
           </Link>
         </div>
-      </div>
-
-      {/* Ka'bah rising from the bottom */}
-      <div className="relative mt-8 flex h-[clamp(190px,42vw,340px)] w-full items-end justify-center sm:mt-12">
-        {/* soft ground shadow */}
-        <div className="absolute bottom-[8%] left-1/2 h-10 w-[min(24rem,72vw)] -translate-x-1/2 rounded-[100%] bg-[radial-gradient(closest-side,rgba(12,16,48,0.28),transparent)] blur-md" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/img/kaaba.webp"
-          alt="Ka'bah di Masjidil Haram"
-          width={900}
-          height={781}
-          className="relative w-[min(23rem,70vw)] translate-y-[12%] drop-shadow-[0_24px_36px_rgba(12,16,48,0.22)]"
-        />
       </div>
     </section>
   );
