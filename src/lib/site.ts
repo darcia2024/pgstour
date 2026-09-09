@@ -60,7 +60,6 @@ export const nav: { label: string; href: string }[] = [
   { label: "Beranda", href: "/" },
   { label: "Paket Umroh", href: "/perjalanan" },
   { label: "Visa Umroh", href: "/visa-umroh" },
-  { label: "Pengalaman", href: "/pengalaman" },
   { label: "Kemitraan", href: "/kemitraan" },
   { label: "Tentang Kami", href: "/tentang-kami" },
 ];

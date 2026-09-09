@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/perjalanan",
-    "/pengalaman",
+    "/visa-umroh",
     "/kemitraan",
     "/tentang-kami",
     "/konsultasi",
