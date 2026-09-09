@@ -18,15 +18,16 @@ export function Hero() {
       {/* Sky, matched to the photo's own sky tone */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#b3d3ec] via-[#c9def0] to-paper-2" />
 
-      {/* Photo at the bottom. Width = "zoom" per breakpoint; translate nudges
-          the Ka'bah to the horizontal centre. */}
+      {/* Photo at the bottom. It is pre-cropped so the Ka'bah corner sits at the
+          file's centre, so plain centring aligns it under the headline.
+          Width per breakpoint is the "zoom" control. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/img/hero-kaaba.webp"
         alt="Ka'bah di Masjidil Haram, Makkah"
-        width={1672}
+        width={1512}
         height={941}
-        className="pointer-events-none absolute bottom-0 left-1/2 w-[215%] max-w-none -translate-x-[56%] select-none [mask-image:linear-gradient(to_bottom,transparent,#000_22%)] sm:w-[135%] lg:w-full"
+        className="pointer-events-none absolute bottom-0 left-1/2 w-[190%] max-w-none -translate-x-1/2 select-none [mask-image:linear-gradient(to_bottom,transparent,#000_22%)] sm:w-[130%] lg:w-full"
       />
 
       <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/45 to-transparent" />
