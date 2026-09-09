@@ -37,16 +37,16 @@ export function SectionHeading({
       {eyebrow ? (
         <Eyebrow
           tone={eyebrowTone}
-          className={clsx("mb-5", align === "center" && "justify-center")}
+          className={clsx("mb-2.5 sm:mb-5", align === "center" && "justify-center")}
         >
           {eyebrow}
         </Eyebrow>
       ) : null}
-      <h2 className="headline text-[2rem] leading-[1.02] sm:text-[2.6rem] md:text-5xl">
+      <h2 className="headline text-2xl sm:text-[2.6rem] md:text-5xl leading-[1.08] sm:leading-[1.02]">
         {title}
       </h2>
       {intro ? (
-        <p className="mt-5 max-w-2xl text-pretty text-[15px] leading-relaxed text-ink-soft sm:text-base">
+        <p className="mt-2.5 sm:mt-5 max-w-2xl text-pretty text-xs sm:text-base leading-relaxed text-ink-soft">
           {intro}
         </p>
       ) : null}

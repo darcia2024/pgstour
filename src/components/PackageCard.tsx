@@ -26,18 +26,31 @@ export function PackageCard({
     >
       <div
         className={clsx(
-          "relative shrink-0 overflow-hidden bg-sand",
-          featured ? "h-60 md:h-auto md:w-[42%]" : "h-48",
+          "relative shrink-0 overflow-hidden bg-gradient-to-b from-sand/70 to-sand/40 flex items-center justify-center p-3 sm:p-4",
+          featured ? "w-full md:w-[42%] lg:w-[38%] min-h-[260px] md:min-h-[380px]" : "h-64",
         )}
       >
-        <Photo
+        {/* Atmospheric blurred backdrop */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={pkg.image}
-          label={pkg.name}
-          alt={`Poster ${pkg.name}`}
-          bare
-          fill
-          imgClassName="object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover blur-xl opacity-25 scale-110"
         />
+
+        {/* Full, uncropped poster */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={pkg.image}
+          alt={`Poster ${pkg.name}`}
+          loading="lazy"
+          className="relative z-10 max-h-[360px] md:max-h-[400px] w-auto max-w-full object-contain rounded-lg shadow-sm transition-transform duration-500 group-hover:scale-[1.02]"
+        />
+
+        <div className="absolute top-2.5 left-2.5 z-20 rounded-full bg-paper/90 backdrop-blur-xs px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-brand shadow-xs">
+          Brosur Resmi
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">
