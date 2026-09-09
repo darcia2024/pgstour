@@ -10,7 +10,7 @@ import { destinations } from "@/content/site-content";
 */
 export function MomentsStrip() {
   return (
-    <section className="overflow-hidden border-y border-line bg-paper-2 py-10 sm:py-12">
+    <section className="overflow-hidden bg-paper-2 py-10 sm:py-12">
       <Container className="mb-6 sm:mb-8">
         <Reveal>
           <Eyebrow className="mb-3">Destinasi</Eyebrow>

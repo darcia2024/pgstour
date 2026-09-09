@@ -13,7 +13,7 @@ const guarantees = [
 
 export function TrustStrip() {
   return (
-    <div className="border-b border-line bg-paper-2">
+    <div className="bg-paper-2">
       <Container className="flex flex-col gap-3 py-3.5 sm:py-4 md:flex-row md:items-center md:justify-between md:gap-6">
         <p className="mkr max-w-xs text-xs font-semibold uppercase leading-snug tracking-[0.1em] text-ink-soft">
           Izin PPIU 09102301626860001

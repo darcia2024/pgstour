@@ -24,7 +24,7 @@ const pillars = [
 
 export function WhoWeAre() {
   return (
-    <section className="border-y border-line bg-paper-2 py-12 sm:py-16">
+    <section className="bg-paper-2 py-12 sm:py-16">
       <Container>
         <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <Reveal>
