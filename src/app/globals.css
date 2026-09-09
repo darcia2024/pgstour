@@ -7,6 +7,11 @@
 */
 
 @theme {
+  /*
+    One coherent blue scale taken from the PGS Tour logo:
+    navy (brand) -> royal blue (mid/bright) -> cyan (marker).
+    Every blue on the site resolves to one of these tokens.
+  */
   --color-paper: #f3f5fb;
   --color-paper-2: #ffffff;
   --color-sand: #e5eaf6;
@@ -19,16 +24,16 @@
   --color-ink-faint: #6a7191;
   --color-muted: #9aa1c0;
 
-  --color-brand: #223089;
-  --color-brand-deep: #171d5e;
-  --color-brand-bright: #1f7ec4;
+  --color-brand: #223089;         /* navy - primary buttons, dark sections */
+  --color-brand-deep: #171d5e;    /* deepest navy */
+  --color-brand-mid: #2c62b0;     /* royal blue - gradient mid-stops */
+  --color-brand-bright: #2578c0;  /* bright blue - icons, highlights, links */
 
   --color-frame: #223089;
 
-  /* cyan from the logo arch; small decorative square + tinted accents */
-  --color-marker: #26a8e0;
-  --color-accent: #1173b0;
-  --color-accent-soft: #86d0f2;
+  --color-marker: #2f9fd6;        /* cyan - small eyebrow squares only */
+  --color-accent: #1a63a6;        /* blue - small text / links on light */
+  --color-accent-soft: #97cbef;   /* light blue - on dark backgrounds */
 
   --font-display: var(--font-rebond), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;

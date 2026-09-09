@@ -48,7 +48,7 @@ export default async function PackageDetailPage({
   return (
     <>
       <section className="relative w-full overflow-hidden bg-ink-2 text-paper-2">
-        <div className="absolute inset-0 bg-[radial-gradient(130%_120%_at_85%_0%,#2c67b2_0%,#1b287c_48%,#0c1030_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(130%_120%_at_85%_0%,var(--color-brand-mid)_0%,var(--color-brand)_46%,var(--color-ink-2)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-transparent" />
 
         <div className="relative mx-auto w-full max-w-7xl px-5 pb-8 pt-28 sm:px-8 sm:pb-10 sm:pt-32">

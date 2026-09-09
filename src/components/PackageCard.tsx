@@ -26,7 +26,7 @@ export function PackageCard({
     >
       <div
         className={clsx(
-          "relative shrink-0 overflow-hidden bg-[#dbeafe]",
+          "relative shrink-0 overflow-hidden bg-sand",
           featured ? "h-60 md:h-auto md:w-[42%]" : "h-48",
         )}
       >

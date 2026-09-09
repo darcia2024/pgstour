@@ -17,7 +17,7 @@ export function PageHeader({
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-ink-2 text-paper-2">
-      <div className="absolute inset-0 bg-[radial-gradient(130%_130%_at_15%_0%,#2c67b2_0%,#1b287c_48%,#0c1030_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(130%_130%_at_15%_0%,var(--color-brand-mid)_0%,var(--color-brand)_46%,var(--color-ink-2)_100%)]" />
       <svg
         aria-hidden
         className="absolute bottom-0 right-0 h-[80%] w-auto text-accent-soft/[0.07]"
