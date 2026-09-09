@@ -16,7 +16,7 @@ export function PageHeader({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative m-1.5 overflow-hidden rounded-[16px] bg-ink-2 text-paper-2 sm:m-2.5 sm:rounded-[24px] lg:m-3">
+    <section className="relative w-full overflow-hidden bg-ink-2 text-paper-2">
       <div className="absolute inset-0 bg-[radial-gradient(130%_130%_at_15%_0%,#2c67b2_0%,#1b287c_48%,#0c1030_100%)]" />
       <svg
         aria-hidden
@@ -29,21 +29,21 @@ export function PageHeader({
         <path d="M230 150c-62 0-112 50-112 112v188h224V262c0-62-50-112-112-112Z" stroke="currentColor" strokeWidth="2" />
       </svg>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-36">
+      <div className="relative mx-auto w-full max-w-7xl px-5 pb-9 pt-28 sm:px-8 sm:pb-12 sm:pt-32">
         {eyebrow ? (
-          <Eyebrow tone="light" className="mb-6">
+          <Eyebrow tone="light" className="mb-3">
             {eyebrow}
           </Eyebrow>
         ) : null}
-        <h1 className="headline max-w-[20ch] text-[2rem] text-paper-2 sm:text-[3rem] lg:text-[3.6rem]">
+        <h1 className="headline max-w-[24ch] text-[1.75rem] leading-[1.08] text-paper-2 sm:text-[2.4rem] lg:text-[2.8rem]">
           {title}
         </h1>
         {intro ? (
-          <p className="mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-paper-2/75 sm:text-base">
+          <p className="mt-3.5 max-w-2xl text-pretty text-xs leading-relaxed text-paper-2/80 sm:text-sm">
             {intro}
           </p>
         ) : null}
-        {children ? <div className="mt-8">{children}</div> : null}
+        {children ? <div className="mt-6">{children}</div> : null}
       </div>
     </section>
   );

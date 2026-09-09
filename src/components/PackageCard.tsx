@@ -20,28 +20,29 @@ export function PackageCard({
     <Link
       href={`/perjalanan/${pkg.slug}`}
       className={clsx(
-        "group flex overflow-hidden rounded-2xl border border-line bg-paper transition-colors duration-300 hover:border-line-strong",
+        "group flex overflow-hidden rounded-xl border border-line bg-paper transition-all duration-200 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-xs",
         featured ? "flex-col md:flex-row" : "flex-col",
       )}
     >
       <div
         className={clsx(
           "relative shrink-0 overflow-hidden bg-sand",
-          featured ? "h-60 md:h-auto md:w-1/2" : "h-48",
+          featured ? "h-52 md:h-auto md:w-[45%]" : "h-44",
         )}
       >
         <Photo
-          label={pkg.image}
+          src={pkg.image}
+          label={pkg.name}
           alt={`Suasana ${pkg.cities.join(", ")}`}
           bare
           fill
-          imgClassName="transition-transform duration-500 group-hover:scale-[1.04]"
+          imgClassName="transition-transform duration-500 group-hover:scale-[1.05]"
         />
-        <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
+        <div className="absolute left-2.5 top-2.5 flex flex-wrap gap-1">
           {pkg.badges.slice(0, featured ? 2 : 1).map((b) => (
             <span
               key={b}
-              className="rounded-full bg-paper-2/92 px-2.5 py-1 text-[11px] font-medium text-ink backdrop-blur-sm"
+              className="rounded-full bg-paper-2/95 px-2 py-0.5 text-[10px] font-semibold text-ink shadow-2xs backdrop-blur-xs"
             >
               {b}
             </span>
@@ -49,44 +50,44 @@ export function PackageCard({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
-        <p className="mkr text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-faint">
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <p className="mkr text-[10px] font-semibold uppercase tracking-[0.12em] text-ink-faint">
           {pkg.subtitle}
         </p>
-        <h3 className="mt-3 font-display text-2xl tracking-tight text-ink">
+        <h3 className="mt-2 font-display text-lg font-bold tracking-tight text-ink sm:text-xl">
           {pkg.name}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-          {featured ? pkg.summary : truncate(pkg.summary, 116)}
+        <p className="mt-1.5 text-xs leading-relaxed text-ink-soft sm:text-[13px]">
+          {featured ? pkg.summary : truncate(pkg.summary, 105)}
         </p>
 
-        <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] text-ink-soft">
-          <li className="inline-flex items-center gap-1.5">
-            <CalendarBlank size={15} className="text-brand-bright" />
+        <ul className="mt-3.5 flex flex-wrap gap-x-3.5 gap-y-1 text-xs text-ink-soft">
+          <li className="inline-flex items-center gap-1">
+            <CalendarBlank size={14} className="text-brand-bright" />
             {pkg.durationDays} hari
           </li>
-          <li className="inline-flex items-center gap-1.5">
-            <Moon size={15} className="text-brand-bright" />
+          <li className="inline-flex items-center gap-1">
+            <Moon size={14} className="text-brand-bright" />
             {pkg.nightsMakkah}M / {pkg.nightsMadinah}M
           </li>
-          <li className="inline-flex items-center gap-1.5">
-            <MapPin size={15} className="text-brand-bright" />
+          <li className="inline-flex items-center gap-1">
+            <MapPin size={14} className="text-brand-bright" />
             {pkg.cities.length} kota
           </li>
         </ul>
 
-        <div className="mt-auto flex items-end justify-between gap-4 border-t border-line pt-4">
+        <div className="mt-4 flex items-end justify-between gap-3 border-t border-line pt-3">
           <div>
-            <p className="text-[11px] uppercase tracking-wide text-ink-faint">
+            <p className="text-[10px] font-medium uppercase tracking-wide text-ink-faint">
               Mulai dari
             </p>
-            <p className="font-display text-xl tracking-tight text-ink">
+            <p className="font-display text-lg font-bold tracking-tight text-brand-deep sm:text-xl">
               {formatIDR(pkg.priceFrom)}
             </p>
           </div>
-          <span className="inline-flex items-center gap-1 text-sm font-medium text-brand transition-transform duration-200 group-hover:translate-x-0.5">
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand transition-transform duration-200 group-hover:translate-x-0.5">
             Detail
-            <ArrowUpRight size={16} weight="bold" />
+            <ArrowUpRight size={14} weight="bold" />
           </span>
         </div>
       </div>

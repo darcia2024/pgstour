@@ -1,14 +1,29 @@
 import { clsx } from "clsx";
 
 /*
-  Image slot with a built-in placeholder.
-
-  While real photography is pending, pass only `label` and a tasteful SVG
-  placeholder renders (no network request, works offline / behind proxies).
-  When you have a real asset, drop it in /public and pass `src="/img/....jpg"`.
-
-  TODO(pgs): replace every <Photo> that has no `src` with a real photograph.
+  Optimized Photo component with automatic local asset resolution,
+  fallback handling, and smooth hover interaction.
 */
+
+const LABEL_MAP: Record<string, string> = {
+  "Ka'bah, Masjidil Haram": "/img/makkah.jpg",
+  "Kubah Hijau, Masjid Nabawi": "/img/nabawi.jpg",
+  "Masjid Nabawi, Madinah": "/img/nabawi.jpg",
+  "Masjid Sultan Ahmed, Istanbul": "/img/istanbul.jpg",
+  "Blue Mosque, Istanbul": "/img/istanbul.jpg",
+  "Kubah Sakhrah, Al-Quds": "/img/alquds.jpg",
+  "Kota tua Al-Quds": "/img/alquds.jpg",
+  "Masjid Al-Azhar, Cairo": "/img/cairo.jpg",
+  "Masjidil Haram di malam hari": "/img/ramadhan.jpg",
+  "Pelataran Masjid Nabawi": "/img/gallery-2.jpg",
+  "Manasik": "/img/gallery-1.jpg",
+  "Kebun kurma": "/img/gallery-3.jpg",
+  "Menuju miqat": "/img/gallery-4.jpg",
+  "Tawaf": "/img/gallery-1.jpg",
+  "Buka puasa bersama": "/img/gallery-6.jpg",
+  "City tour Istanbul": "/img/gallery-5.jpg",
+  "Rombongan PGS di Madinah": "/img/gallery-2.jpg",
+};
 
 function hue(seed: string) {
   let h = 0;
@@ -29,7 +44,7 @@ export function Photo({
   src?: string;
   alt: string;
   label?: string;
-  /** hide the placeholder caption text (use when the parent adds its own) */
+  /** hide the placeholder caption text */
   bare?: boolean;
   fill?: boolean;
   className?: string;
@@ -38,29 +53,36 @@ export function Photo({
 }) {
   const wrap = clsx(
     fill ? "absolute inset-0 h-full w-full" : "relative h-full w-full",
-    "overflow-hidden bg-sand",
+    "overflow-hidden bg-sand/80",
     className,
   );
 
-  if (src) {
+  // Resolve direct source or matched label
+  const resolvedSrc = src || (label ? LABEL_MAP[label] : undefined);
+
+  if (resolvedSrc) {
     return (
       <div className={wrap}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={src}
+          src={resolvedSrc}
           alt={alt}
           loading={priority ? "eager" : "lazy"}
-          className={clsx("h-full w-full object-cover", imgClassName)}
+          decoding="async"
+          className={clsx(
+            "h-full w-full object-cover transition-transform duration-500 will-change-transform",
+            imgClassName,
+          )}
         />
       </div>
     );
   }
 
-  // keep placeholders within the brand blue band so they read as intentional
-  const h = 198 + (hue(label ?? alt) % 34);
-  const c1 = `hsl(${h} 40% 86%)`;
-  const c2 = `hsl(${h + 12} 44% 62%)`;
-  const line = `hsl(${h} 46% 32%)`;
+  // Graceful, refined geometric fallback
+  const h = 200 + (hue(label ?? alt) % 24);
+  const c1 = `hsl(${h} 36% 88%)`;
+  const c2 = `hsl(${h + 10} 40% 70%)`;
+  const line = `hsl(${h} 45% 28%)`;
 
   return (
     <div className={wrap}>
@@ -78,38 +100,24 @@ export function Photo({
           </linearGradient>
         </defs>
         <rect width="400" height="400" fill={`url(#g-${h})`} />
-        <g fill="none" stroke={line} strokeOpacity="0.28" strokeWidth="1.5">
-          <path d="M200 96c-46 0-83 37-83 83v128h166V179c0-46-37-83-83-83Z" />
-          <path d="M200 138c-28 0-51 23-51 51v118h102V189c0-28-23-51-51-51Z" />
-          <line x1="60" y1="307" x2="340" y2="307" />
+        <g fill="none" stroke={line} strokeOpacity="0.22" strokeWidth="1.5">
+          <path d="M200 110c-40 0-72 32-72 72v110h144V182c0-40-32-72-72-72Z" />
+          <path d="M200 146c-24 0-44 20-44 44v102h88V190c0-24-20-44-44-44Z" />
+          <line x1="80" y1="292" x2="320" y2="292" />
         </g>
-        <circle cx="200" cy="150" r="6" fill={line} fillOpacity="0.4" />
+        <circle cx="200" cy="156" r="5" fill={line} fillOpacity="0.35" />
         {!bare && label ? (
           <text
             x="200"
-            y="352"
+            y="336"
             textAnchor="middle"
             fontFamily="ui-sans-serif, system-ui, sans-serif"
-            fontSize="15"
+            fontSize="14"
             fontWeight="600"
             fill={line}
             fillOpacity="0.75"
           >
             {label}
-          </text>
-        ) : null}
-        {!bare ? (
-          <text
-            x="200"
-            y="374"
-            textAnchor="middle"
-            fontFamily="ui-sans-serif, system-ui, sans-serif"
-            fontSize="10"
-            letterSpacing="2"
-            fill={line}
-            fillOpacity="0.5"
-          >
-            FOTO CONTOH
           </text>
         ) : null}
       </svg>

@@ -4,45 +4,52 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PackageCard } from "@/components/PackageCard";
-import { packages } from "@/content/packages";
+import { mainPackage, formatIDR } from "@/content/packages";
 
 export function FeaturedPackages() {
-  const featured = packages.find((p) => p.featured) ?? packages[0];
-  const rest = packages.filter((p) => p.slug !== featured.slug);
-
   return (
-    <section className="border-t border-line bg-paper-2 py-24 sm:py-28">
+    <section className="border-t border-line bg-paper-2 py-12 sm:py-16">
       <Container>
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="flex flex-wrap items-end justify-between gap-4 sm:gap-6">
           <SectionHeading
-            eyebrow="Paket Umrah"
+            eyebrow="Paket Umroh"
             title={
               <>
-                Empat cara menuju{" "}
-                <span className="text-muted">Baitullah</span>
+                Satu paket,{" "}
+                <span className="text-muted">disiapkan sepenuh hati</span>
               </>
             }
+            intro="PGS Tour hanya menjalankan satu paket dengan satu jadwal keberangkatan. Perbedaan harga hanya pada pilihan kamar."
             className="max-w-xl"
           />
           <Reveal>
             <Link
-              href="/perjalanan"
-              className="inline-flex items-center gap-2 border-b border-line-strong pb-1 text-xs font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:border-ink"
+              href={`/perjalanan/${mainPackage.slug}`}
+              className="inline-flex items-center gap-1.5 border-b border-line-strong pb-1 text-xs font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:border-ink"
             >
-              <ArrowRight size={15} weight="bold" />
-              Semua paket
+              <ArrowRight size={14} weight="bold" />
+              Lihat detail
             </Link>
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-4">
+        <div className="mt-8 sm:mt-10">
           <Reveal>
-            <PackageCard pkg={featured} featured />
+            <PackageCard pkg={mainPackage} featured />
           </Reveal>
-          <div className="grid gap-4 md:grid-cols-3">
-            {rest.map((p) => (
-              <Reveal key={p.slug}>
-                <PackageCard pkg={p} />
+
+          <div className="mt-3.5 grid gap-3.5 sm:mt-4 sm:grid-cols-3">
+            {mainPackage.rooms.map((r) => (
+              <Reveal
+                key={r.type}
+                className="rounded-xl border border-line bg-paper p-4 text-center"
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-faint">
+                  {r.type.split(" - ")[0]}
+                </p>
+                <p className="mt-1.5 font-display text-xl font-bold text-brand-deep">
+                  {formatIDR(r.price)}
+                </p>
               </Reveal>
             ))}
           </div>

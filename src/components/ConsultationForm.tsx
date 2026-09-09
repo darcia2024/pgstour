@@ -112,7 +112,7 @@ export function ConsultationForm() {
           <input id="jumlah" name="jumlah" type="text" className={fieldBase} placeholder="mis. 2 orang" />
         </Field>
         <Field label="Perkiraan keberangkatan" htmlFor="tanggal">
-          <input id="tanggal" name="tanggal" type="text" className={fieldBase} placeholder="mis. Ramadhan 2026" />
+          <input id="tanggal" name="tanggal" type="text" className={fieldBase} placeholder="mis. keberangkatan terdekat" />
         </Field>
       </div>
 

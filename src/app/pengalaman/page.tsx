@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 
 // Placeholder gallery. TODO(pgs): ganti dengan dokumentasi asli rombongan.
 const gallery = [
-  { label: "Pelataran Masjid Nabawi", span: "sm:col-span-2 sm:row-span-2", ratio: "aspect-square", alt: "Jamaah di pelataran Masjid Nabawi" },
-  { label: "Manasik", span: "", ratio: "aspect-square", alt: "Bimbingan manasik sebelum keberangkatan" },
-  { label: "Kebun kurma", span: "", ratio: "aspect-square", alt: "Kebun kurma di Madinah" },
-  { label: "Menuju miqat", span: "sm:col-span-2", ratio: "aspect-[2/1]", alt: "Rombongan menuju miqat" },
-  { label: "Tawaf", span: "", ratio: "aspect-square", alt: "Suasana tawaf di Masjidil Haram" },
-  { label: "Buka puasa bersama", span: "", ratio: "aspect-square", alt: "Buka puasa bersama di hotel" },
-  { label: "City tour Istanbul", span: "sm:col-span-2", ratio: "aspect-[2/1]", alt: "City tour Istanbul" },
+  { src: "/img/gallery-2.jpg", label: "Pelataran Masjid Nabawi", span: "sm:col-span-2 sm:row-span-2", ratio: "aspect-square", alt: "Jamaah di pelataran Masjid Nabawi" },
+  { src: "/img/gallery-1.jpg", label: "Manasik & Tawaf", span: "", ratio: "aspect-square", alt: "Bimbingan manasik sebelum keberangkatan" },
+  { src: "/img/gallery-3.jpg", label: "Madinah Al-Munawwarah", span: "", ratio: "aspect-square", alt: "Ziarah Madinah" },
+  { src: "/img/gallery-4.jpg", label: "Menuju Miqat", span: "sm:col-span-2", ratio: "aspect-[2/1]", alt: "Rombongan menuju miqat" },
+  { src: "/img/makkah.jpg", label: "Tawaf di Makkah", span: "", ratio: "aspect-square", alt: "Suasana tawaf di Masjidil Haram" },
+  { src: "/img/gallery-6.jpg", label: "Kebersamaan Jamaah", span: "", ratio: "aspect-square", alt: "Kebersamaan rombongan jamaah" },
+  { src: "/img/gallery-5.jpg", label: "City Tour Makkah", span: "sm:col-span-2", ratio: "aspect-[2/1]", alt: "City tour Makkah" },
 ];
 
 export default function PengalamanPage() {
@@ -34,36 +34,36 @@ export default function PengalamanPage() {
         intro="Ada hal-hal yang tidak tertulis dalam itinerary. Perjalanan umrah adalah kesempatan untuk kembali dengan hati yang berbeda: lebih tenang, lebih dekat kepada Allah, lebih mencintai Rasulullah, dan lebih peduli kepada sesama."
       />
 
-      <section className="py-16 sm:py-20">
+      <section className="py-10 sm:py-14">
         <Container>
-          <div className="grid auto-rows-[minmax(0,1fr)] grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+          <div className="grid auto-rows-[minmax(0,1fr)] grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3.5">
             {gallery.map((g, i) => (
               <Reveal
                 key={g.label}
                 delay={(i % 4) * 0.04}
-                className={`${g.span} overflow-hidden rounded-xl bg-sand`}
+                className={`${g.span} overflow-hidden rounded-xl bg-sand shadow-2xs`}
               >
                 <div className={`relative ${g.ratio} h-full w-full`}>
                   <Photo
+                    src={g.src}
                     label={g.label}
                     alt={g.alt}
                     fill
                     imgClassName="transition-transform duration-500 hover:scale-105"
                   />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-2/80 via-ink-2/30 to-transparent p-2.5 pt-8 sm:p-3">
+                    <p className="text-[11px] font-medium text-paper-2 sm:text-xs">{g.label}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
           </div>
-          <p className="mt-4 text-xs text-ink-faint">
-            Galeri masih menggunakan foto placeholder sampai dokumentasi rombongan
-            tersedia.
-          </p>
         </Container>
       </section>
 
       <Testimonials />
 
-      <section className="py-20 text-center sm:py-24">
+      <section className="py-12 text-center sm:py-16">
         <Container>
           <Reveal className="mx-auto max-w-xl">
             <InstagramLogo size={32} weight="light" className="mx-auto text-brand" />

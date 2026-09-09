@@ -17,6 +17,8 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  // Tutup menu mobile setiap kali rute berubah.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
@@ -30,20 +32,20 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-30">
-      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
+    <header className="absolute inset-x-0 top-0 z-30 w-full pt-4 sm:pt-6">
+      <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-5 sm:h-16 sm:px-8">
         <Logo />
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-2 lg:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={clsx(
-                "text-sm transition-colors",
+                "rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-all duration-150",
                 isActive(item.href)
-                  ? "text-paper-2"
-                  : "text-paper-2/65 hover:text-paper-2",
+                  ? "bg-paper-2/20 text-paper-2 shadow-xs"
+                  : "text-paper-2/75 hover:bg-paper-2/10 hover:text-paper-2",
               )}
             >
               {item.label}
@@ -53,10 +55,10 @@ export function Navbar() {
 
         <Link
           href={primaryCta.href}
-          className="hidden items-center gap-1.5 rounded-full bg-paper-2 px-4 py-2 text-sm font-medium text-ink transition-transform duration-200 hover:-translate-y-px lg:inline-flex"
+          className="hidden items-center gap-1.5 rounded-full bg-paper-2 px-4.5 py-2 text-xs font-semibold text-ink transition-transform duration-200 hover:-translate-y-px hover:shadow-sm lg:inline-flex"
         >
           {primaryCta.label}
-          <ArrowUpRight size={15} weight="bold" />
+          <ArrowUpRight size={14} weight="bold" />
         </Link>
 
         <button
@@ -72,7 +74,7 @@ export function Navbar() {
 
       {open ? (
         <div className="fixed inset-0 z-40 bg-ink-2 lg:hidden">
-          <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
+          <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 pt-3 sm:px-8">
             <Logo size="sm" />
             <button
               type="button"

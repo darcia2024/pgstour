@@ -23,7 +23,7 @@ export function Logo({
   className?: string;
 }) {
   const h =
-    size === "lg" ? "h-16 sm:h-20" : size === "sm" ? "h-12" : "h-14 sm:h-16";
+    size === "lg" ? "h-14 sm:h-16" : size === "sm" ? "h-9" : "h-11 sm:h-12";
 
   return (
     <Link

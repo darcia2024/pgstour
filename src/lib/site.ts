@@ -8,7 +8,8 @@
 export const site = {
   name: "PGS Tour & Travel",
   shortName: "PGS Tour",
-  legalName: "PT Pesona Global Syiarbaitullah",
+  // TODO(pgs): konfirmasi. Diambil dari nama rekening resmi pada poster.
+  legalName: "PT Permana Group Sejahtera",
   tagline: "Mengantar Langkah, Memaknai Ibadah",
   motto: "Amanah & Terpercaya",
   meaning: "Pesona Global Syiarbaitullah",
@@ -22,9 +23,19 @@ export const site = {
     addressShort: "Kaligandu, Kota Serang, Banten",
     phoneDisplay: "+62 813 2955 2371",
     phoneE164: "6281329552371",
+    phoneAltDisplay: "+62 838 1921 0924",
+    phoneAltE164: "6283819210924",
     email: "salam@pgstravel.id",
     // Office hours, PLACEHOLDER
     hours: "Senin - Sabtu, 09.00 - 17.00 WIB",
+  },
+
+  // Rekening pembayaran resmi (dari poster). Pembayaran hanya melalui rekening ini.
+  payment: {
+    bank: "BCA",
+    accountNumber: "5411 42 2071",
+    // TODO(pgs): konfirmasi nama entitas resmi (poster menulis penerima pembayaran).
+    accountName: "PT. Permana Group Sejahtera",
   },
 
   social: {
@@ -35,9 +46,11 @@ export const site = {
     youtube: "", // PLACEHOLDER
   },
 
-  // Legalitas / perizinan. PLACEHOLDER - isi nomor SK resmi dari Kemenag.
+  // Legalitas / perizinan (dari poster resmi).
   legal: {
-    ppiu: "SK Izin PPIU: menunggu data dari klien",
+    // TODO(pgs): verifikasi digit nomor izin dengan SK asli.
+    ppiu: "Izin PPIU No. 0910230162686860001",
+    ppiuShort: "Izin Umroh PPIU: 0910230162686860001",
     iata: "", // jika ada
     kanNib: "", // NIB
   },
@@ -45,7 +58,8 @@ export const site = {
 
 export const nav: { label: string; href: string }[] = [
   { label: "Beranda", href: "/" },
-  { label: "Paket Umrah", href: "/perjalanan" },
+  { label: "Paket Umroh", href: "/perjalanan" },
+  { label: "Visa Umroh", href: "/visa-umroh" },
   { label: "Pengalaman", href: "/pengalaman" },
   { label: "Kemitraan", href: "/kemitraan" },
   { label: "Tentang Kami", href: "/tentang-kami" },

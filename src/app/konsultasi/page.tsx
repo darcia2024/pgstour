@@ -26,9 +26,9 @@ export default function KonsultasiPage() {
         intro="Isi formulir di bawah atau hubungi kami langsung. Tidak ada biaya untuk berkonsultasi, dan Anda tidak terikat apa pun sampai memutuskan mendaftar."
       />
 
-      <section className="py-16 sm:py-20">
+      <section className="py-10 sm:py-14">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1fr_20rem] lg:gap-10">
+          <div className="grid gap-8 lg:grid-cols-[1fr_20rem]">
             <div className="min-w-0">
               <ConsultationForm />
             </div>

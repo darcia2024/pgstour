@@ -3,42 +3,48 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 /*
-  TODO(pgs): confirm these figures with real data (jamaah count, ratio, etc.).
+  Angka dari poster resmi Umroh Mahabbah dan data izin.
 */
 const stats = [
   {
-    value: "500+",
-    label: "Jamaah didampingi",
-    note: "Dari perorangan sampai rombongan keluarga dan majelis taklim.",
+    value: "9",
+    label: "Hari program",
+    note: "Madinah dan Makkah, dengan umroh dua kali.",
   },
   {
-    value: "40",
-    label: "Maksimal per rombongan",
-    note: "Kuota sengaja dijaga kecil agar setiap jamaah tetap terpantau.",
+    value: "2x",
+    label: "Umroh per keberangkatan",
+    note: "Miqat di Bir Ali dan At-Tan'im, dipandu penuh oleh muthawif.",
   },
   {
-    value: "9-14",
-    label: "Hari per perjalanan",
-    note: "Dari umrah reguler sembilan hari hingga Umrah Ramadhan.",
+    value: "3x",
+    label: "Pelatihan manasik",
+    note: "Sebelum berangkat, agar jamaah paham setiap rukun.",
   },
   {
-    value: "4",
-    label: "Negara tujuan",
-    note: "Arab Saudi sebagai inti, plus Palestina, Turki, dan Mesir.",
+    value: "PPIU",
+    label: "Izin resmi Kemenag",
+    note: "No. 0910230162686860001, terdaftar di SISKOPATUH.",
   },
 ];
 
 export function Stats() {
   return (
-    <section className="py-24 sm:py-28">
+    <section className="py-10 sm:py-14">
       <Container>
-        <Eyebrow className="mb-12">Dalam Angka</Eyebrow>
-        <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal key={s.label} className="border-t border-dashed border-line-strong pt-5">
-              <p className="headline text-5xl text-ink sm:text-6xl">{s.value}</p>
-              <p className="mt-3 text-sm font-semibold text-ink">{s.label}</p>
-              <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+          <Eyebrow>Komitmen &amp; Rekam Jejak</Eyebrow>
+          <span className="text-xs text-ink-faint">Data operasional perjalanan</span>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((s) => (
+            <Reveal
+              key={s.label}
+              className="rounded-xl border border-line bg-paper-2 p-4.5 transition-all duration-200 hover:border-line-strong hover:shadow-xs"
+            >
+              <p className="headline text-3xl text-brand-deep sm:text-4xl">{s.value}</p>
+              <p className="mt-2 text-xs font-bold text-ink sm:text-sm">{s.label}</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-ink-soft sm:text-xs">
                 {s.note}
               </p>
             </Reveal>

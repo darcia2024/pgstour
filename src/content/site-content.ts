@@ -58,39 +58,18 @@ export type Destination = {
 
 export const destinations: Destination[] = [
   {
-    name: "Makkah",
-    place: "Masjidil Haram",
-    blurb:
-      "Pusat kiblat umat Islam. Di sinilah tawaf, sai, dan doa-doa panjang dipanjatkan menghadap Ka'bah.",
-    image: "Ka'bah, Masjidil Haram",
-  },
-  {
     name: "Madinah",
     place: "Masjid Nabawi",
     blurb:
-      "Kota Rasulullah. Ketenangannya terasa sejak memasuki gerbang, dengan Raudhah sebagai salah satu taman surga.",
-    image: "Kubah Hijau, Masjid Nabawi",
+      "Kota Rasulullah. Rombongan tinggal di hotel dekat pelataran, dengan program Raudhah dan ziarah kota.",
+    image: "/img/nabawi.jpg",
   },
   {
-    name: "Al-Quds",
-    place: "Masjidil Aqsa",
+    name: "Makkah",
+    place: "Masjidil Haram",
     blurb:
-      "Masjid ketiga yang dimuliakan dan tempat awal perjalanan Isra Mikraj. Tersedia dalam paket Umrah Plus Aqsa.",
-    image: "Kota tua Al-Quds",
-  },
-  {
-    name: "Istanbul",
-    place: "Warisan Utsmani",
-    blurb:
-      "Jejak kekhalifahan yang terbentang dari Hagia Sophia sampai Masjid Sultan Ahmed, menyusuri dua benua.",
-    image: "Blue Mosque, Istanbul",
-  },
-  {
-    name: "Cairo",
-    place: "Mesir & Al-Azhar",
-    blurb:
-      "Negeri para nabi dan rumah bagi Universitas Al-Azhar, salah satu pusat keilmuan Islam tertua.",
-    image: "Masjid Al-Azhar, Cairo",
+      "Pusat kiblat umat Islam. Umroh dua kali dengan miqat Bir Ali dan At-Tan'im, ditambah city tour Makkah.",
+    image: "/img/makkah.jpg",
   },
 ];
 
@@ -107,28 +86,28 @@ export const testimonials: Testimonial[] = [
       "Saya berangkat bersama ibu yang sudah 70 tahun. Pembimbingnya sabar sekali, kursi roda selalu disiapkan, dan kami tidak pernah merasa ditinggal rombongan.",
     name: "Hamdan Firmansyah",
     role: "Jamaah asal Cilegon",
-    trip: "Umrah Barokah, 2025",
+    trip: "Umroh Mahabbah, 2025",
   },
   {
     quote:
       "Rincian biayanya jelas dari awal, tidak ada tambahan mendadak. Hotel di Makkah benar-benar dekat, tinggal jalan kaki ke Masjidil Haram.",
     name: "Retno Wulandari",
     role: "Guru, Serang",
-    trip: "Umrah Barokah, 2024",
+    trip: "Umroh Mahabbah, 2024",
   },
   {
     quote:
-      "Bagian Istanbulnya bikin paham kenapa peradaban Islam pernah begitu besar. Pemandunya bisa bahasa Indonesia, jadi anak-anak ikut mengerti.",
+      "Manasik tiga kali membuat kami tenang. Sampai di sana semua terasa sudah dikenal, tinggal fokus ibadah. Umroh yang kedua di At-Tan'im juga dipandu dengan sabar.",
     name: "Keluarga Nugroho",
     role: "Rombongan keluarga, Tangerang",
-    trip: "Umrah Plus Turki, 2025",
+    trip: "Umroh Mahabbah, 2025",
   },
   {
     quote:
-      "Sepuluh malam terakhir Ramadhan di Makkah adalah hal yang tidak bisa saya jelaskan dengan kata-kata. Jadwal istirahatnya diatur, jadi badan tetap kuat sampai pulang.",
+      "Kereta cepat ke Madinah bikin perjalanan tidak melelahkan untuk orang tua. Jadwal istirahat diatur, jadi badan tetap kuat sampai pulang.",
     name: "Ustadz Abdul Latif",
     role: "Jamaah asal Pandeglang",
-    trip: "Umrah Ramadhan, 2025",
+    trip: "Umroh Mahabbah, 2025",
   },
 ];
 
@@ -146,8 +125,8 @@ export const registrationSteps: Step[] = [
   },
   {
     n: "02",
-    title: "Pilih paket & daftar",
-    body: "Isi formulir pendaftaran, serahkan salinan paspor dan dokumen, lalu bayar uang muka untuk mengunci kursi.",
+    title: "Pilih kamar & daftar",
+    body: "Pilih jenis kamar (Double, Triple, atau Quad), isi formulir, serahkan salinan paspor, lalu bayar uang muka untuk mengunci kursi.",
   },
   {
     n: "03",
@@ -169,8 +148,8 @@ export const about = {
   ],
   principles: [
     {
-      title: "Rombongan kecil",
-      body: "Maksimal 40 jamaah untuk umrah reguler, lebih sedikit untuk paket plus. Pembimbing selalu bisa menghitung kepala.",
+      title: "Satu paket, satu fokus",
+      body: "PGS hanya menjalankan satu paket dengan satu jadwal keberangkatan, supaya seluruh perhatian tertuju pada rombongan yang sama.",
     },
     {
       title: "Biaya terbuka",
@@ -182,15 +161,14 @@ export const about = {
     },
     {
       title: "Hotel yang jujur",
-      body: "Jarak hotel ke masjid kami sebutkan apa adanya dalam meter, bukan istilah samar seperti dekat.",
+      body: "Hotel Makkah Maysan Al Mashaer dan Madinah Astoneast Taiba, keduanya dalam jarak dekat dari masjid.",
     },
   ],
-  // TODO(pgs): ganti angka berikut dengan data resmi (tahun berdiri, jumlah
-  // jamaah yang sudah diberangkatkan, dsb). Untuk saat ini dibuat kualitatif.
+  // TODO(pgs): lengkapi dengan data resmi (tahun berdiri, jumlah jamaah).
   stats: [
-    { value: "40", label: "Jamaah maksimal per rombongan umrah reguler" },
-    { value: "1", label: "Pembimbing menetap dari manasik sampai kepulangan" },
-    { value: "4", label: "Negara tujuan: Arab Saudi, Palestina, Turki, Mesir" },
+    { value: "1", label: "Paket dengan satu jadwal keberangkatan" },
+    { value: "9", label: "Hari program: Madinah dan Makkah" },
+    { value: "3x", label: "Pelatihan manasik sebelum berangkat" },
   ],
 };
 
@@ -202,26 +180,26 @@ export type Faq = {
 export const faqs: Faq[] = [
   {
     q: "Apakah PGS Tour sudah berizin resmi?",
-    a: "Ya. PGS Tour & Travel beroperasi sebagai Penyelenggara Perjalanan Ibadah Umrah (PPIU) berizin. Nomor SK resmi dicantumkan di halaman Tentang Kami dan dapat diverifikasi melalui kanal Kementerian Agama.",
+    a: "Ya. PGS Tour beroperasi sebagai Penyelenggara Perjalanan Ibadah Umrah (PPIU) berizin dengan Izin PPIU No. 0910230162686860001, dan terdaftar di SISKOPATUH. Nomor izin dapat diverifikasi melalui kanal Kementerian Agama.",
   },
   {
-    q: "Berapa lama sebaiknya mendaftar sebelum keberangkatan?",
-    a: "Untuk umrah reguler, idealnya 1 sampai 2 bulan sebelumnya agar visa dan akomodasi terjamin. Untuk Umrah Ramadhan dan Umrah Plus Aqsa, disarankan 3 sampai 6 bulan sebelumnya karena kuota sangat terbatas.",
+    q: "Apa saja yang membedakan harga Double, Triple, dan Quad?",
+    a: "Hanya jumlah orang per kamar hotel. Quad (berempat) Rp 35,5 juta, Triple (bertiga) Rp 38,5 juta, dan Double (berdua) Rp 41,5 juta. Program, hotel, dan fasilitas lainnya sama persis.",
   },
   {
-    q: "Apakah harga yang tertera sudah final?",
-    a: "Harga di situs ini bersifat estimasi mulai dari. Harga final dikunci saat pendaftaran dan bergantung pada kurs, harga tiket, pilihan kamar, serta tanggal keberangkatan. Semua rincian akan dijelaskan tanpa biaya tersembunyi.",
+    q: "Kapan jadwal keberangkatannya?",
+    a: "PGS Tour menjalankan satu jadwal keberangkatan. Hubungi kami melalui WhatsApp untuk mengetahui tanggal keberangkatan terdekat dan sisa kuota.",
   },
   {
-    q: "Apa saja yang perlu saya siapkan sendiri?",
-    a: "Paspor dengan masa berlaku minimal 8 bulan, vaksin meningitis, pas foto sesuai ketentuan, dan pengeluaran pribadi. Selebihnya termasuk dalam paket.",
+    q: "Apa saja yang belum termasuk dalam harga paket?",
+    a: "Pembuatan paspor, vaksin meningitis dan polio, kelebihan bagasi, serta keperluan dan transportasi pribadi dari daerah masing-masing. Selebihnya sudah termasuk.",
   },
   {
-    q: "Apakah bisa berangkat rombongan keluarga atau kantor?",
-    a: "Bisa. Untuk rombongan minimal 20 orang, kami dapat mengatur keberangkatan khusus dengan jadwal, hotel, dan pembimbing tersendiri. Silakan mulai dari halaman Konsultasi.",
+    q: "Bagaimana cara pembayarannya?",
+    a: "Pembayaran hanya melalui rekening resmi BCA 5411 42 2071 a.n. PT. Permana Group Sejahtera. Pendaftaran dikunci dengan uang muka, sisanya dilunasi sebelum keberangkatan.",
   },
   {
-    q: "Bagaimana dengan jamaah lansia atau yang butuh pendampingan khusus?",
-    a: "Kuota rombongan sengaja dijaga kecil. Kami menyiapkan kursi roda, mengatur ritme perjalanan, dan menempatkan pembimbing tambahan bila diperlukan. Sampaikan kondisi kesehatan sejak konsultasi awal.",
+    q: "Apakah PGS juga melayani pengurusan visa umroh saja?",
+    a: "Ya. Selain paket umroh, PGS Travel melayani pengurusan visa umroh untuk perorangan dan rombongan, termasuk visa longstay hingga 85 hari. Rinciannya ada di halaman Visa Umroh.",
   },
 ];

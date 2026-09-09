@@ -26,36 +26,37 @@ export default function TentangKamiPage() {
       />
 
       {/* Cerita + gambar */}
-      <section className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <Container>
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
             <Reveal className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-xs">
                 <Photo
+                  src="/img/gallery-2.jpg"
                   label="Rombongan PGS di Madinah"
-                  alt="Rombongan jamaah PGS Tour"
+                  alt="Rombongan jamaah PGS Tour di Madinah"
                   fill
                 />
               </div>
             </Reveal>
 
             <Reveal delay={0.05}>
-              <h2 className="font-display text-3xl leading-tight text-ink sm:text-4xl">
+              <h2 className="font-display text-2xl leading-tight text-ink sm:text-3xl">
                 Berawal dari satu keresahan
               </h2>
-              <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-ink-soft">
+              <div className="mt-4 space-y-3.5 text-xs leading-relaxed text-ink-soft sm:text-sm">
                 {about.story.map((p) => (
                   <p key={p.slice(0, 24)}>{p}</p>
                 ))}
               </div>
 
-              <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-line pt-8">
+              <dl className="mt-8 grid grid-cols-3 gap-3 border-t border-line pt-6">
                 {about.stats.map((s) => (
                   <div key={s.label}>
-                    <dt className="font-display text-3xl text-brand-deep">
+                    <dt className="font-display text-2xl font-bold text-brand-deep sm:text-3xl">
                       {s.value}
                     </dt>
-                    <dd className="mt-1 text-xs leading-snug text-ink-soft">
+                    <dd className="mt-1 text-[11px] leading-snug text-ink-soft sm:text-xs">
                       {s.label}
                     </dd>
                   </div>
@@ -67,21 +68,21 @@ export default function TentangKamiPage() {
       </section>
 
       {/* Prinsip */}
-      <section className="border-y border-line bg-paper-2 py-20 sm:py-24">
+      <section className="border-y border-line bg-paper-2 py-12 sm:py-16">
         <Container>
           <SectionHeading
             title="Empat hal yang tidak kami kompromikan"
             intro="Ini bukan slogan pemasaran. Empat hal ini yang paling sering ditanyakan jamaah, dan jawabannya selalu sama."
           />
-          <div className="mt-12 grid gap-x-10 gap-y-0 sm:grid-cols-2">
+          <div className="mt-8 grid gap-x-8 gap-y-0 sm:mt-10 sm:grid-cols-2">
             {about.principles.map((p, i) => (
               <Reveal
                 key={p.title}
                 delay={(i % 2) * 0.05}
-                className="border-t border-line py-7"
+                className="border-t border-line py-5"
               >
-                <h3 className="font-display text-xl text-ink">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                <h3 className="font-display text-lg font-bold text-ink">{p.title}</h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-ink-soft sm:text-sm">
                   {p.body}
                 </p>
               </Reveal>
@@ -91,7 +92,7 @@ export default function TentangKamiPage() {
       </section>
 
       {/* Legalitas */}
-      <section className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <Container>
           <Reveal className="rounded-xl border border-line bg-paper-2 p-8 sm:p-10">
             <div className="flex items-start gap-4">

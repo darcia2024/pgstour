@@ -15,65 +15,73 @@ const process = ["Bimbingan", "Keberangkatan", "Kepulangan"];
 
 export function Hero() {
   return (
-    <section className="relative m-1.5 overflow-hidden rounded-[16px] bg-ink-2 text-paper-2 sm:m-2.5 sm:rounded-[24px] lg:m-3">
-      {/* <img src="/img/hero.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" /> */}
-      <div className="absolute inset-0 bg-[radial-gradient(130%_120%_at_18%_0%,#2f6fb8_0%,#1c2a7e_46%,#0c1030_100%)]" />
+    <section className="relative w-full overflow-hidden bg-ink-2 text-paper-2">
+      {/* Real background photography with multi-layer contrast overlay */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/img/hero.jpg"
+        alt="Masjidil Haram Makkah"
+        className="absolute inset-0 h-full w-full object-cover object-right sm:object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink-2/95 via-ink-2/80 to-ink-2/55" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-ink-2/60" />
+      
       <svg
         aria-hidden
-        className="absolute bottom-0 right-0 h-[72%] w-auto text-accent-soft/[0.08]"
+        className="pointer-events-none absolute bottom-0 right-0 h-[65%] w-auto text-accent-soft/[0.07]"
         viewBox="0 0 460 520"
         fill="none"
         preserveAspectRatio="xMaxYMax slice"
       >
         <path d="M230 20C124 20 40 104 40 210v320h380V210C420 104 336 20 230 20Z" stroke="currentColor" strokeWidth="2" />
         <path d="M230 150c-62 0-112 50-112 112v268h224V262c0-62-50-112-112-112Z" stroke="currentColor" strokeWidth="2" />
-        <path d="M230 250c-40 0-72 32-72 72v206h144V322c0-40-32-72-72-72Z" stroke="currentColor" strokeWidth="2" />
       </svg>
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-2/70 via-transparent to-ink-2/50" />
 
-      <div className="relative mx-auto flex min-h-[clamp(500px,74vh,860px)] w-full max-w-7xl flex-col px-5 pb-9 pt-28 sm:px-8 sm:pt-32">
-        <div>
-          <Eyebrow tone="light">Travel Umrah Berizin Resmi</Eyebrow>
-          <h1 className="headline mt-6 text-[2.3rem] text-paper-2 sm:text-[3.4rem] lg:text-6xl xl:text-[4.6rem]">
-            Mengantar
+      <div className="relative mx-auto flex min-h-[520px] w-full max-w-7xl flex-col px-5 pb-10 pt-28 sm:min-h-[560px] sm:px-8 sm:pb-12 sm:pt-34 lg:min-h-[580px]">
+        <div className="max-w-3xl">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <Eyebrow tone="light">Travel Umroh Berizin Resmi</Eyebrow>
+            <span className="inline-flex items-center gap-1 rounded-full bg-paper-2/15 px-2.5 py-0.5 text-[11px] font-medium text-paper-2/90 backdrop-blur-md">
+              <span className="text-accent-soft">•</span> Terdaftar SISKOPATUH Kemenag
+            </span>
+          </div>
+
+          <h1 className="headline mt-4 text-[2rem] leading-[1.05] text-paper-2 sm:text-[3rem] lg:text-[3.6rem] xl:text-[4rem]">
+            Mengantar Langkah,
             <br />
-            Langkah, Memaknai
-            <br />
-            Ibadah.
+            Memaknai Ibadah.
           </h1>
+          <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-paper-2/80 sm:text-[15px]">
+            Satu paket Umroh Mahabbah 9 hari Madinah &amp; Makkah, ditambah
+            layanan pengurusan visa umroh. Pembimbing menetap, kuota terbatas.
+          </p>
         </div>
 
-        <div className="mt-auto grid gap-8 pt-12 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div className="order-2 flex flex-wrap gap-x-8 gap-y-2 text-sm text-paper-2/55 lg:order-1">
+        <div className="mt-auto grid gap-6 pt-8 sm:pt-10 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="order-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-paper-2/65 sm:text-sm lg:order-1">
             {process.map((p) => (
-              <span key={p}>
-                <span className="mr-1.5 text-paper-2/40">+</span>
+              <span key={p} className="inline-flex items-center">
+                <span className="mr-1.5 font-bold text-accent-soft">+</span>
                 {p}
               </span>
             ))}
           </div>
 
-          <div className="order-1 max-w-sm lg:order-2 lg:text-right">
-            <p className="text-[15px] leading-relaxed text-paper-2/80">
-              Umrah Reguler, Umrah Plus Turki &amp; Aqsa, dan Umrah Ramadhan.
-              Untuk keluarga, perorangan, dan rombongan.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2.5 lg:justify-end">
-              <Link
-                href="/perjalanan"
-                className="inline-flex items-center gap-1.5 rounded-full bg-paper-2 px-5 py-2.5 text-sm font-medium text-ink transition-transform duration-200 hover:-translate-y-px"
-              >
-                Lihat Paket
-                <ArrowUpRight size={15} weight="bold" />
-              </Link>
-              <Link
-                href="/konsultasi"
-                className="inline-flex items-center gap-1.5 rounded-full border border-paper-2/30 px-5 py-2.5 text-sm font-medium text-paper-2 transition-colors hover:bg-paper-2/10"
-              >
-                Konsultasi
-                <ArrowUpRight size={15} weight="bold" />
-              </Link>
-            </div>
+          <div className="order-1 flex flex-wrap gap-2.5 lg:order-2 lg:justify-end">
+            <Link
+              href="/perjalanan"
+              className="inline-flex items-center gap-1.5 rounded-full bg-paper-2 px-4.5 py-2 text-xs font-semibold text-ink transition-transform duration-200 hover:-translate-y-px hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm"
+            >
+              Lihat Paket
+              <ArrowUpRight size={14} weight="bold" />
+            </Link>
+            <Link
+              href="/konsultasi"
+              className="inline-flex items-center gap-1.5 rounded-full border border-paper-2/30 bg-paper-2/5 px-4.5 py-2 text-xs font-semibold text-paper-2 backdrop-blur-xs transition-colors hover:bg-paper-2/15 sm:px-5 sm:py-2.5 sm:text-sm"
+            >
+              Konsultasi
+              <ArrowUpRight size={14} weight="bold" />
+            </Link>
           </div>
         </div>
       </div>

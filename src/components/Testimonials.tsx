@@ -12,24 +12,29 @@ export function Testimonials({
   intro?: string;
 }) {
   return (
-    <section className="border-t border-line bg-paper-2 py-24 sm:py-28">
+    <section className="border-t border-line bg-paper-2 py-12 sm:py-16">
       <Container>
         <SectionHeading eyebrow="Pengalaman Jamaah" title={heading} intro={intro} />
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2">
+        <div className="mt-8 grid gap-3.5 sm:mt-10 sm:grid-cols-2">
           {testimonials.map((t) => (
             <Reveal
               key={t.name}
-              className="flex flex-col rounded-2xl border border-line bg-paper p-6 sm:p-7"
+              className="flex flex-col justify-between rounded-xl border border-line bg-paper p-4.5 transition-all duration-200 hover:border-line-strong hover:shadow-xs sm:p-5"
             >
-              <p className="text-[15px] leading-relaxed text-ink">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div className="mt-6 flex items-baseline justify-between gap-3 border-t border-line pt-4">
-                <p className="font-display text-base tracking-tight text-ink">
+              <div>
+                <div className="mb-2 flex items-center gap-1 text-xs text-amber-500" aria-label="Rating 5 dari 5">
+                  {"★".repeat(5)}
+                </div>
+                <p className="text-xs leading-relaxed text-ink/90 sm:text-[13px]">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </div>
+              <div className="mt-4 flex items-baseline justify-between gap-3 border-t border-line pt-3">
+                <p className="font-display text-sm font-bold tracking-tight text-ink">
                   {t.name}
                 </p>
-                <p className="text-right text-[12px] text-ink-faint">
+                <p className="text-right text-[11px] text-ink-faint">
                   {t.role} &middot; {t.trip}
                 </p>
               </div>

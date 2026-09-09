@@ -15,7 +15,7 @@ import { Container } from "@/components/ui/Container";
 import { ButtonExternal, Button } from "@/components/ui/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { packages, getPackage, formatIDR } from "@/content/packages";
-import { waLink } from "@/lib/site";
+import { site, waLink } from "@/lib/site";
 
 export function generateStaticParams() {
   return packages.map((p) => ({ slug: p.slug }));
@@ -46,37 +46,46 @@ export default async function PackageDetailPage({
 
   return (
     <>
-      <section className="relative m-1.5 overflow-hidden rounded-[16px] bg-ink-2 text-paper-2 sm:m-2.5 sm:rounded-[24px] lg:m-3">
-        <div className="absolute inset-0 bg-[radial-gradient(130%_130%_at_85%_0%,#2c67b2_0%,#1b287c_48%,#0c1030_100%)]" />
-        <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-32 sm:px-8 sm:pb-16 sm:pt-36">
+      <section className="relative w-full overflow-hidden bg-ink-2 text-paper-2">
+        {/* Real photo background with multi-stop dark overlay */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={pkg.image}
+          alt={pkg.name}
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-2/95 via-ink-2/85 to-ink-2/65" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-2 via-transparent to-ink-2/60" />
+
+        <div className="relative mx-auto w-full max-w-7xl px-5 pb-8 pt-28 sm:px-8 sm:pb-10 sm:pt-32">
           <Link
             href="/perjalanan"
-            className="inline-flex items-center gap-1.5 text-sm text-paper-2/70 transition-colors hover:text-paper-2"
+            className="inline-flex items-center gap-1.5 text-xs text-paper-2/70 transition-colors hover:text-paper-2 sm:text-sm"
           >
-            <ArrowLeft size={15} />
-            Semua paket
+            <ArrowLeft size={14} />
+            Ringkasan paket
           </Link>
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-1.5">
             {pkg.badges.map((b) => (
               <span
                 key={b}
-                className="rounded-full border border-paper-2/20 px-3 py-1 text-xs text-paper-2/85"
+                className="rounded-full border border-paper-2/20 bg-paper-2/10 px-2.5 py-0.5 text-[11px] font-medium text-paper-2/90 backdrop-blur-xs"
               >
                 {b}
               </span>
             ))}
           </div>
-          <h1 className="headline mt-5 max-w-2xl text-[2.2rem] text-paper-2 sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="headline mt-3 max-w-2xl text-[1.85rem] leading-[1.05] text-paper-2 sm:text-4xl lg:text-[2.8rem]">
             {pkg.name}
           </h1>
-          <p className="mt-3 text-lg text-accent-soft">{pkg.subtitle}</p>
-          <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-paper-2/80">
+          <p className="mt-2 text-sm font-medium text-accent-soft sm:text-base">{pkg.subtitle}</p>
+          <p className="mt-3.5 max-w-2xl text-xs leading-relaxed text-paper-2/80 sm:text-sm">
             {pkg.summary}
           </p>
         </div>
       </section>
 
-      <section className="py-14 sm:py-20">
+      <section className="py-10 sm:py-14">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_20rem] lg:gap-10">
             <div className="min-w-0">
@@ -157,17 +166,28 @@ export default async function PackageDetailPage({
             <aside className="lg:sticky lg:top-24 lg:self-start">
               <div className="rounded-xl border border-line bg-paper-2 p-6 shadow-soft">
                 <p className="text-[11px] uppercase tracking-wide text-ink-faint">
-                  Mulai dari
+                  Harga per jenis kamar
                 </p>
-                <p className="mt-1 font-display text-3xl text-brand-deep">
-                  {formatIDR(pkg.priceFrom)}
-                </p>
-                <p className="mt-1 text-[13px] text-ink-soft">/ {pkg.priceNote}</p>
+                <ul className="mt-2 divide-y divide-line border-y border-line">
+                  {pkg.rooms.map((r) => (
+                    <li
+                      key={r.type}
+                      className="flex items-center justify-between gap-3 py-2.5"
+                    >
+                      <span className="text-sm text-ink-soft">
+                        {r.type.split(" - ")[0]}
+                      </span>
+                      <span className="font-display text-base font-bold text-brand-deep">
+                        {formatIDR(r.price)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
 
-                <div className="mt-5 space-y-2.5 border-t border-line pt-5 text-sm text-ink-soft">
+                <div className="mt-5 space-y-2.5 text-sm text-ink-soft">
                   <Row label="Durasi" value={`${pkg.durationDays} hari`} />
                   <Row label="Kota" value={pkg.cities.join(", ")} />
-                  <Row label="Kuota" value={pkg.quota} />
+                  <Row label="Keberangkatan" value="1 jadwal" />
                 </div>
 
                 <div className="mt-6 flex flex-col gap-2.5">
@@ -179,8 +199,9 @@ export default async function PackageDetailPage({
                   </Button>
                 </div>
                 <p className="mt-4 text-xs leading-relaxed text-ink-faint">
-                  Harga estimasi, belum final. Dikunci saat pendaftaran sesuai
-                  kurs, pilihan kamar, dan tanggal keberangkatan.
+                  Harga belum termasuk paspor dan vaksin. Pembayaran hanya melalui{" "}
+                  {site.payment.bank} {site.payment.accountNumber} a.n.{" "}
+                  {site.payment.accountName}.
                 </p>
               </div>
             </aside>

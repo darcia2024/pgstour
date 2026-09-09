@@ -1,42 +1,64 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { PackageCard } from "@/components/PackageCard";
 import { Faq } from "@/components/Faq";
 import { CtaBand } from "@/components/CtaBand";
-import { packages } from "@/content/packages";
+import { mainPackage, formatIDR } from "@/content/packages";
 
 export const metadata: Metadata = {
-  title: "Paket Umrah",
+  title: "Paket Umroh Mahabbah",
   description:
-    "Pilihan paket umrah PGS Tour: Umrah Barokah 9 hari, Umrah Plus Turki, Umrah Plus Aqsa & Cairo, dan Umrah Ramadhan.",
+    "Paket Umroh Mahabbah PGS Tour: 9 hari Madinah dan Makkah, umroh 2x, hotel dekat masjid. Kamar Quad Rp 35,5 juta, Triple Rp 38,5 juta, Double Rp 41,5 juta.",
 };
 
 export default function PerjalananPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Paket Umrah"
-        title="Pilih perjalanan yang sesuai dengan niat Anda"
-        intro="Setiap paket memakai pola dasar yang sama: kelompok kecil, pembimbing yang menemani, dan biaya yang terbuka. Yang membedakan adalah durasi dan kota yang ditambahkan."
+        eyebrow="Paket Umroh"
+        title="Umroh Mahabbah, satu-satunya paket kami"
+        intro="PGS Tour memilih fokus pada satu paket dengan satu jadwal keberangkatan, supaya seluruh perhatian tertuju pada rombongan yang sama. Yang membedakan biaya hanya pilihan kamar."
       />
 
-      <section className="py-16 sm:py-20">
+      <section className="py-10 sm:py-14">
         <Container>
-          <div className="grid gap-6 md:grid-cols-2">
-            {packages.map((p, i) => (
-              <Reveal key={p.slug} delay={(i % 2) * 0.05}>
-                <PackageCard pkg={p} />
+          <Reveal>
+            <PackageCard pkg={mainPackage} featured />
+          </Reveal>
+
+          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+            {mainPackage.rooms.map((r) => (
+              <Reveal
+                key={r.type}
+                className="rounded-xl border border-line bg-paper-2 p-5 text-center"
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-faint">
+                  {r.type}
+                </p>
+                <p className="mt-2 font-display text-xl font-bold text-brand-deep">
+                  {formatIDR(r.price)}
+                </p>
               </Reveal>
             ))}
           </div>
 
-          <p className="mt-10 max-w-2xl text-sm leading-relaxed text-ink-soft">
-            Harga yang tertera adalah estimasi mulai dari untuk kamar berempat.
-            Harga final bergantung pada tanggal keberangkatan, pilihan kamar, dan
-            kurs saat pendaftaran. Semua rincian dijelaskan tanpa biaya
-            tersembunyi.
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href={`/perjalanan/${mainPackage.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-full bg-brand px-5 py-2.5 text-xs font-semibold text-paper-2 transition-transform duration-200 hover:-translate-y-px hover:bg-brand-deep sm:text-sm"
+            >
+              Lihat rincian lengkap
+            </Link>
+          </div>
+
+          <p className="mt-6 max-w-2xl text-xs leading-relaxed text-ink-soft sm:mt-8 sm:text-sm">
+            Harga di atas belum termasuk pembuatan paspor, vaksin meningitis dan
+            polio, serta keperluan pribadi. Harga final dikunci saat pendaftaran
+            mengikuti kurs dan ketentuan maskapai. Pembayaran hanya melalui
+            rekening resmi PGS.
           </p>
         </Container>
       </section>
@@ -46,8 +68,8 @@ export default function PerjalananPage() {
       </div>
 
       <CtaBand
-        title="Belum yakin paket yang mana?"
-        body="Sampaikan rencana, jumlah rombongan, dan perkiraan tanggal. Kami bantu menimbang pilihan yang paling pas."
+        title="Siap berangkat bersama rombongan berikutnya?"
+        body="Sampaikan jumlah jamaah dan pilihan kamar. Kami bantu proses pendaftaran sampai keberangkatan."
       />
     </>
   );

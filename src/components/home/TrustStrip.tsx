@@ -1,31 +1,30 @@
 import { Container } from "@/components/ui/Container";
 
 /*
-  Trust strip. Instead of client logos (an umrah agency has jamaah, not brand
-  clients) this states what every departure guarantees.
-  TODO(pgs): confirm the "500+" figure or replace with a real number.
+  Trust strip: what every keberangkatan Umroh Mahabbah menjamin.
 */
 const guarantees = [
-  "Izin PPIU resmi",
-  "Visa umrah legal",
-  "Maskapai terjadwal",
-  "Hotel dekat masjid",
+  "Penerbangan langsung",
+  "Hotel bintang 4 dekat masjid",
+  "Umroh 2x",
+  "Kereta cepat Haramain",
   "Pembimbing menetap",
 ];
 
 export function TrustStrip() {
   return (
     <div className="border-b border-line bg-paper-2">
-      <Container className="flex flex-col gap-5 py-7 md:flex-row md:items-center md:justify-between md:gap-8">
-        <p className="mkr max-w-xs text-[13px] font-medium uppercase leading-snug tracking-[0.1em] text-ink-soft">
-          Lebih dari 500 jamaah telah kami dampingi
+      <Container className="flex flex-col gap-3 py-3.5 sm:py-4 md:flex-row md:items-center md:justify-between md:gap-6">
+        <p className="mkr max-w-xs text-xs font-semibold uppercase leading-snug tracking-[0.1em] text-ink-soft">
+          Izin PPIU 0910230162686860001
         </p>
-        <ul className="flex flex-wrap gap-x-6 gap-y-2">
+        <ul className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
           {guarantees.map((g) => (
             <li
               key={g}
-              className="text-[13px] font-medium text-ink-faint"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-ink-faint"
             >
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-bright" />
               {g}
             </li>
           ))}

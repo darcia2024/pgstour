@@ -46,15 +46,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="id" className={`${hanken.variable} h-full antialiased`}>
-      <body className="bg-frame">
-        {/* Pine-green frame around the whole page */}
-        <div className="min-h-screen bg-frame p-1.5 sm:p-2.5 lg:p-3">
-          <div className="relative overflow-hidden rounded-[20px] bg-paper sm:rounded-[30px] lg:rounded-[38px]">
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </div>
-        </div>
+      <body className="min-h-screen bg-paper text-ink">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
         <WhatsAppButton />
       </body>
     </html>
