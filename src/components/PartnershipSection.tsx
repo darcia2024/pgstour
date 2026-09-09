@@ -90,9 +90,9 @@ export function PartnershipSection() {
               <p>
                 Kami percaya bahwa pelayanan yang baik lahir dari orang-orang yang
                 memiliki kepedulian. Karena itu, PGS ingin membangun kemitraan
-                yang saling menguatkan — bukan hanya meminta mitra untuk tumbuh
-                bersama kami, tetapi juga membantu mitra untuk berkembang bersama
-                PGS.
+                yang saling menguatkan. Kami tidak hanya meminta mitra untuk
+                tumbuh bersama kami, tetapi juga membantu mitra berkembang
+                bersama PGS.
               </p>
             </div>
           </Reveal>
@@ -209,7 +209,8 @@ export function PartnershipSection() {
                         className="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-deep hover:underline sm:text-sm"
                       >
                         <FilePdf size={16} weight="duotone" className="text-brand-bright" />
-                        Pelajari ketentuan dan skema kemitraan di sini (Download S&amp;K PDF) &rarr;
+                        Pelajari ketentuan dan skema kemitraan di sini (Download S&amp;K PDF)
+                        <ArrowRight size={14} weight="bold" />
                       </button>
                     </div>
                   </div>

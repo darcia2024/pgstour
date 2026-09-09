@@ -33,17 +33,15 @@ export function Hero() {
       <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/45 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-paper-2 via-paper-2/70 to-transparent" />
 
-      <div className="relative mx-auto max-w-4xl px-5 pb-[56vw] pt-28 text-center sm:px-8 sm:pb-[34vw] sm:pt-32 lg:pb-[24rem]">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3.5 py-1.5 text-[12px] font-semibold text-ink shadow-[0_2px_10px_-2px_rgba(12,16,48,0.12)] backdrop-blur-sm">
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-bright" />
-          Terdaftar SISKOPATUH Kementerian Agama
-        </span>
-
-        <h1 className="headline mx-auto mt-6 max-w-3xl text-[2.6rem] leading-[1.02] text-ink sm:text-[3.6rem] lg:text-[4.25rem]">
-          Selamat datang di
+      <div className="relative mx-auto max-w-4xl px-5 pb-[56vw] pt-32 text-center sm:px-8 sm:pb-[34vw] sm:pt-40 lg:pb-[24rem]">
+        <h1 className="headline mx-auto max-w-3xl text-[2.4rem] leading-[1.05] text-ink sm:text-[3.3rem] lg:text-[3.9rem]">
+          Selamat Datang di
           <br />
-          PGS Tour
+          PGS Tour &amp; Travel
         </h1>
+        <p className="mt-4 text-[13px] font-semibold uppercase tracking-[0.24em] text-brand sm:text-sm">
+          Amanah &amp; Terpercaya
+        </p>
 
         {/* Hadis keutamaan umrah */}
         <figure className="mx-auto mt-7 max-w-2xl">

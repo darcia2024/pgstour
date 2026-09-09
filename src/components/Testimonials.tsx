@@ -1,3 +1,4 @@
+import { Star } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -23,19 +24,24 @@ export function Testimonials({
               className="flex flex-col justify-between rounded-xl border border-line bg-paper p-4.5 transition-all duration-200 hover:border-line-strong hover:shadow-xs sm:p-5"
             >
               <div>
-                <div className="mb-2 flex items-center gap-1 text-xs text-amber-500" aria-label="Rating 5 dari 5">
-                  {"★".repeat(5)}
+                <div
+                  className="mb-2 flex items-center gap-0.5 text-amber-500"
+                  aria-label="Rating 5 dari 5"
+                >
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={13} weight="fill" />
+                  ))}
                 </div>
                 <p className="text-xs leading-relaxed text-ink/90 sm:text-[13px]">
                   &ldquo;{t.quote}&rdquo;
                 </p>
               </div>
-              <div className="mt-4 flex items-baseline justify-between gap-3 border-t border-line pt-3">
+              <div className="mt-4 border-t border-line pt-3">
                 <p className="font-display text-sm font-bold tracking-tight text-ink">
                   {t.name}
                 </p>
-                <p className="text-right text-[11px] text-ink-faint">
-                  {t.role} &middot; {t.trip}
+                <p className="mt-0.5 text-[11px] text-ink-faint">
+                  {t.role}, {t.trip}
                 </p>
               </div>
             </Reveal>
