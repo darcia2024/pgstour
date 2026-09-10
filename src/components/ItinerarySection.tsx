@@ -76,7 +76,7 @@ export const ITINERARY_DATA: ItineraryItem[] = [
     cityType: "travel",
     title: "Mengambil Miqat di Bir Ali & Kereta Cepat Haramain (HHR)",
     detail:
-      "Persiapan menuju Makkah: mandi sunnah ihram dan mengenakan pakaian ihram dari hotel di Madinah. Rombongan bertolak ke Masjid Miqat Bir Ali (Dzul Hulaifah) untuk sholat sunnah dan melafalkan niat ihram umroh dipimpin muthawif. Melanjutkan perjalanan menuju Makkah menggunakan Kereta Cepat Haramain (HHR) berkecepatan 300 km/jam (~2 jam perjalanan nyaman). Tiba di Makkah, check-in Hotel Maysan Al Mashaer (*4), istirahat sejenak, lalu bersama-sama melaksanakan Umroh Pertama (Thawaf, Sa'i, dan Tahallul).",
+      "Persiapan menuju Makkah: mandi sunnah ihram dan mengenakan pakaian ihram dari hotel di Madinah. Rombongan bertolak ke Masjid Miqat Bir Ali (Dzul Hulaifah) untuk sholat sunnah dan melafalkan niat ihram umroh dipimpin muthawif. Melanjutkan perjalanan menuju Makkah menggunakan Kereta Cepat Haramain (HHR) berkecepatan 300 km/jam (~2 jam perjalanan nyaman). Tiba di Makkah, check-in Hotel Maysan Al Mashaer, istirahat sejenak, lalu bersama-sama melaksanakan Umroh Pertama (Thawaf, Sa'i, dan Tahallul).",
     image: "/img/kereta-haramain.webp",
     caption: "Kereta Cepat Haramain (HHR) Menuju Makkah",
     quote: "Menanggalkan pakaian duniawi, menyambut panggilan suci di Baitullah.",
@@ -99,7 +99,7 @@ export const ITINERARY_DATA: ItineraryItem[] = [
     caption: "Kemegahan Ka'bah & Multazam, Masjidil Haram",
     quote: "Satu kali sholat di Masjidil Haram lebih utama dari 100.000 sholat di tempat lain.",
     highlights: [
-      "Fokus memperbanyak ibadah di Masjidil Haram dekat hotel (*4)",
+      "Fokus memperbanyak ibadah di Masjidil Haram",
       "City tour Makkah: Jabal Tsur, Padang Arafah, Mina, dan Jabal Rahmah",
       "Kesempatan Umroh Kedua dengan miqat di At-Tan'im",
     ],
