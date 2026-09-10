@@ -143,8 +143,8 @@ export const registrationSteps: Step[] = [
 export const about = {
   story: [
     "PGS Tour & Travel lahir di Serang, Banten, dari keresahan sederhana: terlalu banyak jamaah yang pulang dari umrah tanpa benar-benar memahami apa yang mereka kerjakan di sana. Perjalanan terasa seperti paket wisata yang ditempeli ibadah, bukan sebaliknya.",
-    "Nama Pesona Global Syiarbaitullah kami pilih sebagai pengingat: tugas kami adalah menyampaikan syiar rumah Allah, bukan sekadar menjual kursi pesawat. Karena itu kami menjaga rombongan tetap kecil, menempatkan pembimbing yang benar-benar menemani, dan membuka rincian biaya sejak percakapan pertama.",
-    "Sampai hari ini kami tetap perusahaan keluarga yang mengenal jamaahnya satu per satu. Banyak yang kembali berangkat bersama kami, kali ini mengajak orang tua, anak, atau tetangga.",
+    "Nama Pesona Global Syiarbaitullah kami pilih sebagai pengingat moral untuk mengembalikan marwah ibadah ke esensi sejatinya: rombongan dijaga proporsional, pembimbing ibadah menemani langsung, dan biaya dibuka transparan.",
+    "Karena itu kami hadir mendampingi setiap tamu Allah SWT agar dapat menjalani perjalanan ibadah dengan tenang, nyaman, khusyuk, dan penuh makna. Perjalanan Umrah bukan sekadar perpindahan dari satu negara ke negara lain, tapi 'Perjalanan Hati' yang dapat mengubah cara seseorang memandang hidup, ibadah dan cintanya kepada Allah SWT & Rasulullah SAW.",
   ],
   principles: [
     {

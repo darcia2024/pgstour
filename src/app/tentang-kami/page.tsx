@@ -95,11 +95,11 @@ export default function TentangKamiPage() {
               </span>
 
               <h2 className="headline mt-2 text-2xl font-bold tracking-tight text-ink sm:text-3xl lg:text-[2.2rem] lg:leading-tight">
-                Berawal dari Satu Keresahan Sederhana
+                Kami Percaya Bahwa...
               </h2>
 
               <p className="mt-6 font-display text-lg italic leading-relaxed text-brand-deep border-l-2 border-brand-bright pl-5 sm:text-xl">
-                &ldquo;Tugas kami adalah menyampaikan syiar rumah Allah, bukan sekadar menjual tiket dan kursi pesawat.&rdquo;
+                &ldquo;Perjalanan umroh adalah kesempatan untuk kembali dengan hati yang berbeda. Lebih tenang, lebih dekat kepada Allah SWT, lebih mencintai Rasulullah SAW dan lebih peduli kepada sesama.&rdquo;
               </p>
 
               <div className="mt-6 space-y-4 text-xs leading-relaxed text-ink-soft sm:text-sm">
@@ -110,7 +110,7 @@ export default function TentangKamiPage() {
                   Nama <strong className="text-ink font-semibold">Pesona Global Syiarbaitullah</strong> kami pilih sebagai pengingat moral. Kami ingin mengembalikan marwah ibadah ke esensi sejatinya: rombongan dijaga tetap proporsional agar terpantau, pembimbing ibadah menemani langsung dari manasik hingga kembali ke tanah air, dan biaya dibuka transparan sejak hari pertama.
                 </p>
                 <p>
-                  Sampai hari ini kami tetap menjaga suasana hangat kekeluargaan yang mengenal jamaahnya satu per satu. Keberkahan terbesar kami adalah saat jamaah yang telah pulang kembali mempercayakan keberangkatan orang tua, anak, dan sanak saudaranya bersama PGS Tour.
+                  Karena itu kami hadir mendampingi setiap tamu Allah SWT agar dapat menjalani perjalanan ibadah dengan tenang, nyaman, khusyuk, dan penuh makna. Perjalanan Umrah bukan sekedar perpindahan dari satu negara ke negara lain, tapi &ldquo;Perjalanan Hati&rdquo; yang dapat mengubah cara seseorang memandang hidup, ibadah dan cintanya kepada Allah SWT &amp; Rasulullah SAW.
                 </p>
               </div>
 
