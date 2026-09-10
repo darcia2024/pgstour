@@ -63,7 +63,7 @@ export default function TentangKamiPage() {
       {/* ============================================================ */}
       <PageHeader
         eyebrow="Tentang Kami"
-        title="Menyampaikan syiar Baitullah, bukan sekadar menjual perjalanan"
+        title="Mengantar Setiap Langkah Anda untuk Meresapi Makna Ibadah"
         intro={`${site.legalName} (${site.name}). Berakar dari Kota Serang, Banten, melayani dengan prinsip bahwa setiap jamaah adalah tamu Allah yang harus didampingi dengan keikhlasan, keterbukaan, dan standar terbaik.`}
       />
 
