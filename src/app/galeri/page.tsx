@@ -4,9 +4,9 @@ import { JamaahGallery } from "@/components/home/JamaahGallery";
 import { CtaBand } from "@/components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Galeri Jamaah - Dokumentasi Nyata Perjalanan PGS Tour",
+  title: "Galeri Jamaah - Bukan Sekedar Itinerary, Tapi Momen yang Penuh Arti - PGS Tour",
   description:
-    "Lihat dokumentasi autentik perjalanan umroh jamaah PGS Tour di Makkah, Madinah, dan Masjidil Haram. Momen ibadah nyata keluarga, bimbingan lansia, dan kebersamaan di Tanah Suci.",
+    "Sebab, pada akhirnya, yang kita bawa pulang bukan hanya foto, oleh-oleh, atau daftar tempat yang pernah dikunjungi. Kita membawa cerita, perasaan, pengalaman, dan kenangan yang akan terus hidup jauh setelah perjalanan berakhir.",
 };
 
 export default function GaleriPage() {
@@ -14,8 +14,8 @@ export default function GaleriPage() {
     <>
       <PageHeader
         eyebrow="Dokumentasi Perjalanan"
-        title="Galeri Jamaah PGS Tour"
-        intro="Momen-momen nyata, rasa syukur, dan kehangatan ibadah jamaah kami di Makkah, Madinah, dan tempat-tempat bersejarah di Tanah Suci."
+        title="Bukan Sekedar Itinerary, Tapi Momen yang Penuh Arti"
+        intro="Sebab, pada akhirnya, yang kita bawa pulang bukan hanya foto, oleh-oleh, atau daftar tempat yang pernah dikunjungi. Kita membawa cerita, perasaan, pengalaman, dan kenangan yang akan terus hidup jauh setelah perjalanan berakhir."
       />
 
       <main>

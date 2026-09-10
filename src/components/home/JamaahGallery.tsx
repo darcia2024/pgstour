@@ -306,11 +306,10 @@ export function JamaahGallery({
         <div className="mt-14 border-t border-line pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="text-xs text-ink-soft">
             <strong className="font-semibold text-ink">Foto dokumentasi asli</strong> rombongan Umroh PGS Tour &amp; Travel.
-            Bukan rekayasa atau model komersial.
           </div>
 
           <a
-            href={waLink("Halo PGS Tour, saya melihat foto-foto dokumentasi jamaah di website. Saya ingin berkonsultasi mengenai paket keberangkatan terdekat.")}
+            href={waLink("Halo PGS Tour, saya melihat foto-foto dokumentasi jamaah di website. Saya ingin berkonsultasi mengenai program keberangkatan terdekat.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-xs font-semibold text-brand hover:underline"
