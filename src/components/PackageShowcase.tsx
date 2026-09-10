@@ -75,7 +75,7 @@ export function PackageShowcase({ pkg }: { pkg: UmrahPackage }) {
             </Link>
             <span>/</span>
             <Link href="/perjalanan" className="transition-colors hover:text-ink">
-              Paket Umroh
+              Program Umroh
             </Link>
             <span>/</span>
             <span className="font-semibold text-ink">{pkg.name}</span>

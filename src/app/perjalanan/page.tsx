@@ -6,17 +6,17 @@ import { CtaBand } from "@/components/CtaBand";
 import { mainPackage } from "@/content/packages";
 
 export const metadata: Metadata = {
-  title: "Paket Umroh Mahabbah 9 Hari - PGS Tour",
+  title: "Program Umroh Mahabbah 9 Hari - PGS Tour",
   description:
-    "Paket Umroh Mahabbah PGS Tour: 9 hari Madinah dan Makkah, penerbangan langsung, hotel dekat masjid. Brosur resmi, rincian biaya kamar Quad, Triple, Double, dan itinerary lengkap.",
+    "Program Umroh Mahabbah PGS Tour: 9 hari Madinah dan Makkah, penerbangan langsung, hotel dekat masjid. Brosur resmi, rincian biaya kamar Quad, Triple, Double, dan itinerary lengkap.",
 };
 
 export default function PerjalananPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Paket Umroh &amp; Brosur Resmi"
-        title="Paket Umroh Mahabbah 9 Hari"
+        eyebrow="Program Umroh &amp; Brosur Resmi"
+        title="Program Umroh Mahabbah 9 Hari"
         intro="Program keberangkatan terdekat PGS Tour. Penerbangan langsung Garuda Indonesia / Saudia, hotel dekat masjid, dan bimbingan ibadah intensif."
       />
 
@@ -25,7 +25,7 @@ export default function PerjalananPage() {
       </main>
 
       <div className="border-t border-line bg-paper-2">
-        <Faq heading="Pertanyaan Seputar Paket Umroh Mahabbah" />
+        <Faq heading="Pertanyaan Seputar Program Umroh Mahabbah" />
       </div>
 
       <CtaBand

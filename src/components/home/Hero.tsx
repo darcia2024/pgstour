@@ -9,7 +9,7 @@ import { waLink } from "@/lib/site";
 */
 
 const bookingWa = waLink(
-  "Assalamu'alaikum PGS Tour, saya ingin booking paket Umroh Mahabbah. Mohon informasi jadwal dan cara pendaftarannya.",
+  "Assalamu'alaikum PGS Tour, saya ingin booking program Umroh Mahabbah. Mohon informasi jadwal dan cara pendaftarannya.",
 );
 
 export function Hero() {
@@ -23,10 +23,8 @@ export function Hero() {
           Width per breakpoint is the "zoom" control. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/img/hero-kaaba.webp"
-        alt="Ka'bah di Masjidil Haram, Makkah"
-        width={1512}
-        height={941}
+        src="/img/hero-kaaba-bright.webp"
+        alt="Ka'bah dan pelataran Masjidil Haram"
         className="pointer-events-none absolute bottom-0 left-1/2 w-[190%] max-w-none -translate-x-1/2 select-none [mask-image:linear-gradient(to_bottom,transparent,#000_22%)] sm:w-[130%] lg:w-full"
       />
 
@@ -34,10 +32,12 @@ export function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-paper-2 via-paper-2/70 to-transparent" />
 
       <div className="relative mx-auto max-w-4xl px-4 pb-[50vw] pt-24 text-center sm:px-8 sm:pb-[34vw] sm:pt-40 lg:pb-[24rem]">
-        <h1 className="headline mx-auto max-w-3xl text-[2rem] leading-[1.08] text-ink sm:text-[3.3rem] lg:text-[3.9rem]">
+        <h1 className="headline mx-auto max-w-4xl text-[1.65rem] leading-[1.18] text-ink sm:text-[2.65rem] lg:text-[3.25rem]">
           Selamat Datang di
           <br />
-          PGS Tour &amp; Travel
+          Pesona Global Syiarbaitullah
+          <br />
+          <span className="text-brand-bright">PGS Tour &amp; Travel</span>
         </h1>
         <p className="mt-2.5 text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.24em] text-brand sm:text-sm">
           Amanah &amp; Terpercaya
@@ -77,7 +77,7 @@ export function Hero() {
             href="/perjalanan"
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-ink/20 bg-white/70 px-5 py-3 text-xs sm:text-sm font-semibold text-ink backdrop-blur-sm transition-colors hover:bg-white sm:w-auto sm:px-6 sm:py-3.5"
           >
-            Lihat Paket Umroh
+            Pilih Program Umroh
             <ArrowRight size={15} weight="bold" />
           </Link>
         </div>

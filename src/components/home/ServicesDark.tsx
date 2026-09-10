@@ -14,7 +14,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const services = [
   {
     icon: AirplaneTilt,
-    title: "Paket Umroh Mahabbah",
+    title: "Program Umroh Mahabbah",
     desc: "Program 9 hari Madinah dan Makkah, penerbangan langsung, hotel dekat masjid, dan umroh 2x.",
     href: "/perjalanan",
     tag: "Keberangkatan Terdekat",

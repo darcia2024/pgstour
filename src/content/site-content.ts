@@ -200,6 +200,6 @@ export const faqs: Faq[] = [
   },
   {
     q: "Apakah PGS juga melayani pengurusan visa umroh saja?",
-    a: "Ya. Selain paket umroh, PGS Travel melayani pengurusan visa umroh untuk perorangan dan rombongan, termasuk visa longstay hingga 85 hari. Rinciannya ada di halaman Visa Umroh.",
+    a: "Ya. Selain program umroh, PGS Travel melayani pengurusan visa umroh untuk perorangan dan rombongan, termasuk visa longstay hingga 85 hari. Rinciannya ada di halaman Visa Umroh.",
   },
 ];

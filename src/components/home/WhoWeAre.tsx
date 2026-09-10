@@ -14,7 +14,7 @@ const pillars = [
   {
     icon: ShieldCheck,
     title: "Biaya Transparan & Pasti",
-    desc: "Seluruh rincian fasilitas dibuka transparan sejak awal tanpa komponen biaya siluman atau kejutan di kemudian hari.",
+    desc: "Seluruh rincian fasilitas dibuka transparan sejak awal tanpa komponen biaya tersembunyi atau kejutan di kemudian hari.",
   },
   {
     icon: UsersThree,
@@ -36,7 +36,7 @@ export function WhoWeAre() {
             </div>
 
             <h2 className="headline text-xl font-bold tracking-tight text-ink sm:text-3xl lg:text-[2.35rem] lg:leading-[1.15]">
-              Bukan Sekadar Menjual Kursi, Kami Menyampaikan Syiar
+              Bukan Sekedar Program Umrah, Kami Menyampaikan Syiar
             </h2>
 
             <div className="mt-3.5 sm:mt-5 space-y-2.5 sm:space-y-3.5 text-xs leading-relaxed text-ink-soft sm:text-[15px]">

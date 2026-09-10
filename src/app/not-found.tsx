@@ -10,12 +10,12 @@ export default function NotFound() {
       </h1>
       <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-soft">
         Tautan yang Anda buka mungkin sudah berpindah. Kembali ke beranda atau
-        lihat paket umrah kami.
+        lihat program umrah kami.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button href="/">Kembali ke beranda</Button>
         <Button href="/perjalanan" variant="outline">
-          Lihat paket umrah
+          Lihat program umrah
         </Button>
       </div>
     </Container>

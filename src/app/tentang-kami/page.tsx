@@ -37,7 +37,7 @@ const principles = [
   {
     num: "02",
     title: "Biaya Jujur & Transparan",
-    desc: "Seluruh rincian biaya penerbangan langsung, hotel dekat masjid, visa resmi, kereta cepat Haramain, dan perlengkapan dibuka sejak awal. Tidak ada biaya siluman atau pungutan mendadak di kemudian hari.",
+    desc: "Seluruh rincian biaya penerbangan langsung, hotel dekat masjid, visa resmi, kereta cepat Haramain, dan perlengkapan dibuka sejak awal. Tidak ada biaya tersembunyi atau pungutan mendadak di kemudian hari.",
   },
   {
     num: "03",
@@ -301,7 +301,7 @@ export default function TentangKamiPage() {
                 href="/perjalanan"
                 className="inline-flex items-center justify-center gap-1.5 rounded-full border border-line-strong bg-paper px-7 py-3 text-xs font-semibold text-ink transition-colors hover:bg-sand sm:text-sm"
               >
-                <span>Lihat Paket Umroh Mahabbah</span>
+                <span>Lihat Program Umroh Mahabbah</span>
                 <ArrowRight size={14} weight="bold" />
               </Link>
             </div>

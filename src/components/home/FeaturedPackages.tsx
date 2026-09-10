@@ -27,7 +27,7 @@ export function FeaturedPackages() {
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-4 sm:gap-6">
           <SectionHeading
-            eyebrow="Paket Umroh Terdekat"
+            eyebrow="Program Umroh Terdekat"
             title={
               <>
                 Keberangkatan{" "}
