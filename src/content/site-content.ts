@@ -83,31 +83,24 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Saya berangkat bersama ibu yang sudah 70 tahun. Pembimbingnya sabar sekali, kursi roda selalu disiapkan, dan kami tidak pernah merasa ditinggal rombongan.",
-    name: "Hamdan Firmansyah",
-    role: "Jamaah asal Cilegon",
-    trip: "Umroh Mahabbah, 2025",
+      "PGS Tour & Travel jadi favorite perjalanan religius keluarga kami, PGS Tour the best layanannya. Insya Allah 29 Juni kami berangkat kelbes bersama PGS Tour.",
+    name: "Tuti Alawiyah",
+    role: "Ulasan Terverifikasi Google",
+    trip: "2 ulasan • 18 foto",
   },
   {
     quote:
-      "Rincian biayanya jelas dari awal, tidak ada tambahan mendadak. Hotel di Makkah benar-benar dekat, tinggal jalan kaki ke Masjidil Haram.",
-    name: "Retno Wulandari",
-    role: "Guru, Serang",
-    trip: "Umroh Mahabbah, 2024",
+      "Pelayanan mantap, perjalanan nyaman. Terima kasih sudah membimbing dan melayani para tamu-tamu Allah. Sukses selalu PGS Tour.",
+    name: "Ratna Sari",
+    role: "Ulasan Terverifikasi Google",
+    trip: "1 ulasan • 1 foto",
   },
   {
     quote:
-      "Manasik tiga kali membuat kami tenang. Sampai di sana semua terasa sudah dikenal, tinggal fokus ibadah. Umroh yang kedua di At-Tan'im juga dipandu dengan sabar.",
-    name: "Keluarga Nugroho",
-    role: "Rombongan keluarga, Tangerang",
-    trip: "Umroh Mahabbah, 2025",
-  },
-  {
-    quote:
-      "Kereta cepat ke Madinah bikin perjalanan tidak melelahkan untuk orang tua. Jadwal istirahat diatur, jadi badan tetap kuat sampai pulang.",
-    name: "Ustadz Abdul Latif",
-    role: "Jamaah asal Pandeglang",
-    trip: "Umroh Mahabbah, 2025",
+      "Masyaallah tabarakallah, PGS Tour memang paling debest.",
+    name: "Ahmad Andri",
+    role: "Local Guide Google Maps",
+    trip: "4 ulasan • 36 foto",
   },
 ];
 
