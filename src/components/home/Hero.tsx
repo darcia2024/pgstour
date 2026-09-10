@@ -23,8 +23,10 @@ export function Hero() {
           Width per breakpoint is the "zoom" control. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/img/hero-kaaba-bright.webp"
+        src="/img/hero-kaaba.webp"
         alt="Ka'bah dan pelataran Masjidil Haram"
+        width={1512}
+        height={941}
         className="pointer-events-none absolute bottom-0 left-1/2 w-[190%] max-w-none -translate-x-1/2 select-none [mask-image:linear-gradient(to_bottom,transparent,#000_22%)] sm:w-[130%] lg:w-full"
       />
 
